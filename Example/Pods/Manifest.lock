@@ -1,0 +1,16 @@
+PODS:
+  - JQCollectionViewAlignLayout (0.1.0)
+
+DEPENDENCIES:
+  - JQCollectionViewAlignLayout (from `../`)
+
+EXTERNAL SOURCES:
+  JQCollectionViewAlignLayout:
+    :path: ../
+
+SPEC CHECKSUMS:
+  JQCollectionViewAlignLayout: d7ae5a00c8cf213e43cad1573defb4a61707002a
+
+PODFILE CHECKSUM: e7f1ea936d1ac71998bdf0bf954f4b0e1a437ba3
+
+COCOAPODS: 1.4.0.beta.2

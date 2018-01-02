@@ -1,0 +1,6 @@
+framework module JQCollectionViewAlignLayout {
+  umbrella header "JQCollectionViewAlignLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

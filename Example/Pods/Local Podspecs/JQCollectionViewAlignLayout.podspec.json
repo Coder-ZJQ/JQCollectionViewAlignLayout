@@ -1,0 +1,22 @@
+{
+  "name": "JQCollectionViewAlignLayout",
+  "version": "0.1.0",
+  "summary": "A short description of JQCollectionViewAlignLayout.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/coder-zjq/JQCollectionViewAlignLayout",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "coder-zjq": "zjq_joker@163.com"
+  },
+  "source": {
+    "git": "https://github.com/coder-zjq/JQCollectionViewAlignLayout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JQCollectionViewAlignLayout/Classes/**/*"
+}
