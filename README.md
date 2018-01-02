@@ -1,9 +1,6 @@
 # JQCollectionViewAlignLayout
 
-[![CI Status](http://img.shields.io/travis/coder-zjq/JQCollectionViewAlignLayout.svg?style=flat)](https://travis-ci.org/coder-zjq/JQCollectionViewAlignLayout)
-[![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
-[![License](https://img.shields.io/cocoapods/l/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
-[![Platform](https://img.shields.io/cocoapods/p/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
+[![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)[![License](https://img.shields.io/cocoapods/l/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)[![Platform](https://img.shields.io/cocoapods/p/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
 
 ## Example
 

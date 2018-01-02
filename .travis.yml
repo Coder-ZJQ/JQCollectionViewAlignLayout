@@ -1,4 +1,0 @@
-language: objective-c
-xcode_project: Example/JQCollectionViewAlignLayout.xcworkspace
-xcode_scheme: JQCollectionViewAlignLayout-Example
-podfile: Example/Podfile
