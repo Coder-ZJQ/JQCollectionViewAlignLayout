@@ -1,6 +1,10 @@
 # JQCollectionViewAlignLayout
 
-[![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)[![License](https://img.shields.io/cocoapods/l/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)[![Platform](https://img.shields.io/cocoapods/p/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
+
+[![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
+[![License](https://img.shields.io/cocoapods/l/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
+[![Platform](https://img.shields.io/cocoapods/p/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
+
 
 ## Example
 
@@ -16,6 +20,27 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'JQCollectionViewAlignLayout'
 ```
+
+## Usage
+
+``` objective-c
+// setup the itemAlignment for all sections
+JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
+layout.itemAlignment = JQCollectionViewItemAlignmentLeft;
+UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+```
+
+``` objective-c
+// setup the itemAlignment for each section
+// 1. assign the layout delegate
+layout.delegate = self;
+// 2. implement the protocol method
+- (JQCollectionViewItemAlignment)layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section {
+  // return the JQCollectionViewItemAlignment in section.
+}
+```
+
+
 
 ## Author
 
