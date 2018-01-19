@@ -99,7 +99,7 @@ static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
         NSArray *alignments = @[@(JQCollectionViewItemAlignmentLeft), @(JQCollectionViewItemAlignmentRight), @(JQCollectionViewItemAlignmentCenter), @(JQCollectionViewItemAlignmentTile), @(JQCollectionViewItemAlignmentFlow)];
         for (NSNumber *alignment in alignments)
         {
-            int count = arc4random() % 5 + 25;
+            int count = 40;
             NSMutableArray *items = [[NSMutableArray alloc] init];
             for (int j = 0; j < count; j++)
             {

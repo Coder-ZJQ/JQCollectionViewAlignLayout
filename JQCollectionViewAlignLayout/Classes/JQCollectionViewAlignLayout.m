@@ -8,40 +8,16 @@
 
 #import "JQCollectionViewAlignLayout.h"
 
-@interface NSArray (UICollectionViewLayoutAttributes)
+@interface JQCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
 
-- (void)evaluateItemAttributesSuccess:(void (^)(CGFloat visibleWidth, NSInteger visibleCount))success;
-
-@end
-
-@implementation NSArray (UICollectionViewLayoutAttributes)
-
-- (void)evaluateItemAttributesSuccess:(void (^)(CGFloat visibleWidth, NSInteger visibleCount))success
-{
-    CGFloat visibleWidth = 0.f;
-    NSInteger visibleCount = 0;
-    for (UICollectionViewLayoutAttributes *attr in self)
-    {
-        // 忽略无宽高的情况
-        if (CGRectGetWidth(attr.frame) > 0 && CGRectGetHeight(attr.frame) > 0)
-        {
-            visibleWidth += CGRectGetWidth(attr.frame);
-            visibleCount++;
-        }
-    }
-    !success ?: success(visibleWidth, visibleCount);
-}
+/// next item space
+@property (nonatomic) CGFloat nextItemSpece;
 
 @end
 
-@interface JQCollectionViewAlignLayout (attributes)
-
-- (CGFloat)minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
-- (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section;
-- (JQCollectionViewItemAlignment)itemAlignmentForSectionAtIndex:(NSInteger)section;
+@implementation JQCollectionViewLayoutAttributes
 
 @end
-
 @implementation JQCollectionViewAlignLayout (attributes)
 
 - (CGFloat)minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -82,109 +58,139 @@
     }
 }
 
-@end
-
-@interface JQCollectionViewAlignLayout (alignment)
-
-- (void)alignTheItemAttributes:(NSArray<UICollectionViewLayoutAttributes *> *)itemAttributes;
+- (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeZero;
+}
 
 @end
 
 @implementation JQCollectionViewAlignLayout (alignment)
 
-- (void)alignTheItemAttributes:(NSArray<UICollectionViewLayoutAttributes *> *)itemAttributes
-{
-    if (itemAttributes.count == 0) return;
-    JQCollectionViewItemAlignment itemAlignment = [self itemAlignmentForSectionAtIndex:[itemAttributes firstObject].indexPath.section];
-    if (itemAlignment == JQCollectionViewItemAlignmentFlow) return;
-    UIEdgeInsets insets = [self insetForSectionAtIndex:[itemAttributes firstObject].indexPath.section];
-    CGFloat minimumInteritemSpacing = [self minimumInteritemSpacingForSectionAtIndex:[itemAttributes firstObject].indexPath.section];
+- (void)calculateItemAttributes:(NSArray<UICollectionViewLayoutAttributes*> *)array success:(void (^)(CGFloat itemLineStart, CGFloat itemLineSpace))success {
+    if (array.count == 0) return;
+    CGFloat totalWidth = 0.f;
+    for (UICollectionViewLayoutAttributes *attr in array) {
+        totalWidth += CGRectGetWidth(attr.frame);
+    }
+    JQCollectionViewItemAlignment alignment = [self itemAlignmentForSectionAtIndex:[array firstObject].indexPath.section];
+    UIEdgeInsets insets = [self insetForSectionAtIndex:[array firstObject].indexPath.section];
+    CGFloat minimumInteritemSpacing = [self minimumInteritemSpacingForSectionAtIndex:[array firstObject].indexPath.section];
     CGFloat collectionViewWidth = CGRectGetWidth(self.collectionView.frame);
-    __block NSInteger visibleCount = 0;
-    __block CGFloat visibleWidth = 0.f;
     CGFloat start = 0.f, space = 0.f;
-    [itemAttributes evaluateItemAttributesSuccess:^(CGFloat width, NSInteger count) {
-        visibleCount = count;
-        visibleWidth = width;
-    }];
-    switch (itemAlignment)
+    NSInteger totalCount = array.count;
+    switch (alignment)
     {
         case JQCollectionViewItemAlignmentLeft:
         {
             start = insets.left;
             space = minimumInteritemSpacing;
         }
-        break;
-
+            break;
+            
         case JQCollectionViewItemAlignmentCenter:
         {
-            start = (collectionViewWidth - visibleWidth - minimumInteritemSpacing * (visibleCount - 1)) / 2.f;
+            start = (collectionViewWidth - totalWidth - minimumInteritemSpacing * (totalCount - 1)) / 2.f;
             space = minimumInteritemSpacing;
         }
-        break;
-
+            break;
+            
         case JQCollectionViewItemAlignmentRight:
         {
-            start = collectionViewWidth - visibleWidth - minimumInteritemSpacing * (visibleCount - 1) - insets.right;
+            start = insets.right;
             space = minimumInteritemSpacing;
-            itemAttributes = [itemAttributes reverseObjectEnumerator].allObjects;
         }
-        break;
-
+            break;
+            
         case JQCollectionViewItemAlignmentTile:
         {
-            start = (collectionViewWidth - visibleWidth) / (visibleCount + 1);
+            start = (collectionViewWidth - totalWidth) / (totalCount + 1);
             space = start;
         }
-        break;
-
+            break;
+            
         default:
             break;
     }
-    CGRect preFrame = CGRectZero;
-    for (UICollectionViewLayoutAttributes *attr in itemAttributes)
-    {
-        CGRect frame = attr.frame;
-        frame.origin.x = CGRectGetMaxX(preFrame) + (CGRectIsEmpty(preFrame) ? start : space);
-        attr.frame = frame;
-        preFrame = frame;
-    }
+    !success ?: success(start, space);
 }
-
 @end
-
 @implementation JQCollectionViewAlignLayout
+
++ (Class)layoutAttributesClass {
+    return [JQCollectionViewLayoutAttributes class];
+}
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
-    NSArray *originAttributes = [super layoutAttributesForElementsInRect:rect];
-    NSMutableArray *updateAttributes = [[NSMutableArray alloc] initWithArray:originAttributes];
-    NSMutableArray *attrsPerLine = [[NSMutableArray alloc] init];
-    for (UICollectionViewLayoutAttributes *attrs in originAttributes)
-    {
-        if (attrs.representedElementCategory != UICollectionElementCategoryCell) continue;
-        NSInteger index = [originAttributes indexOfObject:attrs];
-        updateAttributes[index] = [attrs copy];
-        UICollectionViewLayoutAttributes *currentAttr = updateAttributes[index];
-        NSIndexPath *currentIndexPath = currentAttr.indexPath;
-        UIEdgeInsets insets = [self insetForSectionAtIndex:currentIndexPath.section];
-        NSInteger itemCount = [self.collectionView numberOfItemsInSection:currentIndexPath.section];
-        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item + 1 inSection:currentIndexPath.section];
-        CGRect nextFrame = currentIndexPath.item == itemCount - 1 ? CGRectZero : [self layoutAttributesForItemAtIndexPath:nextIndexPath].frame;
-        CGRect currentLine = CGRectMake(insets.left, currentAttr.frame.origin.y, CGRectGetWidth(self.collectionView.frame) - insets.left - insets.right, currentAttr.frame.size.height);
-        BOOL isLineEnd = !CGRectIntersectsRect(nextFrame, currentLine);
-        [attrsPerLine addObject:currentAttr];
-        if (isLineEnd) {
-            [self alignTheItemAttributes:attrsPerLine];
-            [attrsPerLine removeAllObjects];
+    NSArray *originalAttributes = [super layoutAttributesForElementsInRect:rect];
+    NSMutableArray *updatedAttributes = [NSMutableArray arrayWithArray:originalAttributes];
+    for (UICollectionViewLayoutAttributes *attributes in originalAttributes) {
+        if (!attributes.representedElementKind) {
+            NSUInteger index = [updatedAttributes indexOfObject:attributes];
+            updatedAttributes[index] = [self layoutAttributesForItemAtIndexPath:attributes.indexPath];
         }
     }
-    return updateAttributes;
+    return updatedAttributes;
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [super layoutAttributesForItemAtIndexPath:indexPath];
+    JQCollectionViewItemAlignment alignment = [self itemAlignmentForSectionAtIndex:indexPath.section];
+    if (alignment == JQCollectionViewItemAlignmentFlow) {
+        return [super layoutAttributesForItemAtIndexPath:indexPath];
+    }
+    
+    NSIndexPath *currentIndexPath = indexPath;
+    NSIndexPath *previousIndexPath = indexPath.item == 0 ? nil : [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
+    
+    // This is likely occurring because the flow layout subclass JQCollectionViewAlignLayout is modifying attributes returned by UICollectionViewFlowLayout without copying them
+    JQCollectionViewLayoutAttributes *currentAttributes = [[super layoutAttributesForItemAtIndexPath:currentIndexPath] copy];
+    UICollectionViewLayoutAttributes *previousAttributes = previousIndexPath ? [super layoutAttributesForItemAtIndexPath:previousIndexPath] : nil;
+    
+    CGRect currentFrame = currentAttributes.frame;
+    CGRect previousFrame = previousAttributes ? previousAttributes.frame : CGRectZero;
+    
+    UIEdgeInsets insets = [self insetForSectionAtIndex:currentIndexPath.section];
+    CGRect currentLineFrame = CGRectMake(insets.left, currentFrame.origin.y, CGRectGetWidth(self.collectionView.frame), currentFrame.size.height);
+    CGRect previousLineFrame = CGRectMake(insets.left, previousFrame.origin.y, CGRectGetWidth(self.collectionView.frame), previousFrame.size.height);
+    
+    BOOL isLineStart = !CGRectIntersectsRect(currentLineFrame, previousLineFrame);
+    __block CGFloat start = 0.f, space = 0.f;
+    if (isLineStart) {
+        NSMutableArray *lineAttributesArray = [[NSMutableArray alloc] init];
+        [lineAttributesArray addObject:currentAttributes];
+        NSInteger itemCount = [self.collectionView numberOfItemsInSection:currentIndexPath.section];
+        NSInteger index = currentIndexPath.item;
+        BOOL isLineEnd = currentIndexPath.item == itemCount - 1;
+        while (!isLineEnd) {
+            index++;
+            if (index == itemCount) break;
+            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:index inSection:currentIndexPath.section];
+            UICollectionViewLayoutAttributes *nextAttributes = [super layoutAttributesForItemAtIndexPath:nextIndexPath];
+            CGRect nextLineFrame = CGRectMake(insets.left, nextAttributes.frame.origin.y, CGRectGetWidth(self.collectionView.frame), nextAttributes.frame.size.height);
+            isLineEnd = !CGRectIntersectsRect(currentLineFrame, nextLineFrame);
+            if (isLineEnd) break;
+            [lineAttributesArray addObject:nextAttributes];
+        }
+        [self calculateItemAttributes:lineAttributesArray success:^(CGFloat itemLineStart, CGFloat itemLineSpace) {
+            start = itemLineStart;
+            space = itemLineSpace;
+        }];
+        NSLog(@"---------");
+        currentFrame.origin.x = alignment == JQCollectionViewItemAlignmentRight ? (CGRectGetWidth(self.collectionView.frame) - start - currentFrame.size.width) : start;
+        currentAttributes.nextItemSpece = space;
+    } else {
+        JQCollectionViewLayoutAttributes *previous = (JQCollectionViewLayoutAttributes *)[self layoutAttributesForItemAtIndexPath:previousIndexPath];
+        if (alignment == JQCollectionViewItemAlignmentRight) {
+            currentFrame.origin.x = previous.frame.origin.x - previous.nextItemSpece - currentFrame.size.width;
+        } else {
+            currentFrame.origin.x = CGRectGetMaxX(previous.frame) + previous.nextItemSpece;
+        }
+        currentAttributes.nextItemSpece = previous.nextItemSpece;
+    }
+    currentAttributes.frame = currentFrame;
+    return currentAttributes;
 }
 
 @end
+
