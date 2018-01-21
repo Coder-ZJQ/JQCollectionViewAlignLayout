@@ -57,7 +57,6 @@ static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellReuseIdentifier forIndexPath:indexPath];
     NSArray *arr = self.data[indexPath.section][@"items"];
     cell.backgroundColor = arr[indexPath.item][@"color"];
-    [cell snapshotViewAfterScreenUpdates:YES];
     return cell;
 }
 

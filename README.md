@@ -40,6 +40,16 @@ layout.delegate = self;
 }
 ```
 
+## Alignment
+
+|                alignment                 |                demo image                |
+| :--------------------------------------: | :--------------------------------------: |
+| JQCollectionViewItemAlignmentFlow(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/flow.png?raw=true) |
+|    JQCollectionViewItemAlignmentLeft     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-left.png?raw=true) |
+|    JQCollectionViewItemAlignmentRight    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-right.png?raw=true) |
+|   JQCollectionViewItemAlignmentCenter    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-center.png?raw=true) |
+|    JQCollectionViewItemAlignmentTile     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/tile.png?raw=true) |
+
 
 
 ## Author
