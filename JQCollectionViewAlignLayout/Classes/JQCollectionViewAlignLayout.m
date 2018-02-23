@@ -14,7 +14,7 @@
 
 @end
 
-#define JQCacheKey(indexPath) [NSString stringWithFormat:@"[%ld-%ld]", indexPath.section, indexPath.item]
+#define JQCacheKey(indexPath) [NSString stringWithFormat:@"[%ld-%ld]", (long)indexPath.section, (long)indexPath.item]
 
 @implementation JQCollectionViewAlignLayout (attributes)
 
