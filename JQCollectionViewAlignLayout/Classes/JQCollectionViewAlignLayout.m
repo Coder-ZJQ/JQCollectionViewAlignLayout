@@ -61,6 +61,7 @@
 @implementation JQCollectionViewAlignLayout (line)
 
 - (BOOL)jq_isLineStartAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item == 0) return YES;
     NSIndexPath *currentIndexPath = indexPath;
     NSIndexPath *previousIndexPath = indexPath.item == 0 ? nil : [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
     

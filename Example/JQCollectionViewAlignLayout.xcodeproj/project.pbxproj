@@ -69,7 +69,7 @@
 		E2D4CD660B24B5E85808FBBA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F3041C8C1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlignmentCollectionHeaderView.h; sourceTree = "<group>"; };
 		F3041C8D1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignmentCollectionHeaderView.m; sourceTree = "<group>"; };
-		FDFA14EA73C4FA651482E65C /* JQCollectionViewAlignLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JQCollectionViewAlignLayout.podspec; path = ../JQCollectionViewAlignLayout.podspec; sourceTree = "<group>"; };
+		FDFA14EA73C4FA651482E65C /* JQCollectionViewAlignLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JQCollectionViewAlignLayout.podspec; path = ../JQCollectionViewAlignLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +213,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				07A9BE5CE283EB747E86839F /* [CP] Embed Pods Frameworks */,
-				EA2D04733988C78904FF25A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,8 +231,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				8B08DB87F5B0875D3AD32623 /* [CP] Embed Pods Frameworks */,
-				76844D6E0072DBD3112F152B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +252,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "coder-zjq";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 92MVBZK45G;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -320,36 +320,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76844D6E0072DBD3112F152B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B08DB87F5B0875D3AD32623 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9A3EDDE5DFC489FB82A1B128 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,21 +354,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA2D04733988C78904FF25A2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,6 +516,7 @@
 			baseConfigurationReference = 4CC7C60235D294D1E26970F1 /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92MVBZK45G;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Prefix.pch";
 				INFOPLIST_FILE = "JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Info.plist";
@@ -576,6 +532,7 @@
 			baseConfigurationReference = B782C4BD8CE8815745AFD43A /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92MVBZK45G;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Prefix.pch";
 				INFOPLIST_FILE = "JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Info.plist";
