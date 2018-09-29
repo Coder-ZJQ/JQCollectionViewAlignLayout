@@ -1,6 +1,6 @@
 {
   "name": "JQCollectionViewAlignLayout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "Align left, center, right and tile UICollectionView layout.",
   "description": "Align left, center, right and tile UICollectionView layout based on UICollectionViewFlowLayout.",
   "homepage": "https://github.com/coder-zjq/JQCollectionViewAlignLayout",
@@ -19,7 +19,7 @@
   },
   "source": {
     "git": "https://github.com/coder-zjq/JQCollectionViewAlignLayout.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "6.0"

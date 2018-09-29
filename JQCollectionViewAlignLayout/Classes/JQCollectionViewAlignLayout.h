@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemAlignment) {
 };
 
 @class JQCollectionViewAlignLayout;
-@protocol JQCollectionViewAlignLayoutDelegate <NSObject>
+@protocol JQCollectionViewAlignLayoutDelegate <UICollectionViewDelegateFlowLayout>
 @optional
 /**
  设置不同 section 的对齐方式
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemAlignment) {
  @param section section
  @return 对齐方式
  */
-- (JQCollectionViewItemAlignment)layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section;
+- (JQCollectionViewItemAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section;
 
 @end
 
@@ -34,8 +34,6 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemAlignment) {
 
 /// 对齐类型，默认为 JQCollectionViewItemAlignmentFlow
 @property (nonatomic) JQCollectionViewItemAlignment itemAlignment;
-/// 代理
-@property (nonatomic, weak) id<JQCollectionViewAlignLayoutDelegate> delegate;
 
 @end
 

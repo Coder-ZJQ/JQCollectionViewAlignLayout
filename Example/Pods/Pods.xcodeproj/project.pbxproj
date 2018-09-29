@@ -7,103 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08FC4D4B8909A2B7AF0130D2102523AA /* JQCollectionViewAlignLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53067394079543AAB2DB138639BEC837 /* JQCollectionViewAlignLayout-dummy.m */; };
-		1D85C6043B5BFBD2AB2D05B8ABA1ADAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		3B5F8B57B547D597753AE6523F217E55 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A96E000E4C84B5E868C8C1A5A7661DD4 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */; };
-		8D5EA399EF4F521F769C793703C49F2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		B52FB9024E762B4F7094A1C7C493CB2F /* JQCollectionViewAlignLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE3DD173DB1C75C63D82D95DA9B5B75 /* JQCollectionViewAlignLayout.m */; };
-		B70C25ED4D2EB9C42B652F6BE2A06E4F /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B3F410AF08F6DD2312835C3C756EAD5 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8DED9B606042EC8E1838A8B40E94141 /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD72430EAFE453B4460FE79CD625FD /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */; };
-		EBBC19A0C927222C2CCBC5B2B42CD479 /* JQCollectionViewAlignLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA2CC9B5591A0D12D334E6A370A29B4 /* JQCollectionViewAlignLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2A44AA42ADB762ED978C555B4D4E7B1 /* JQCollectionViewAlignLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A98ABFCF1FA0416206DF7A1EDCA7B6 /* JQCollectionViewAlignLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2FDAEA22ACB568F2B713BFB47B0AA24 /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD632799F093C050F678E924D68018E /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FCE6ED64F7CFF0188DEAD2559042A324 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		16C7FB7D952EAE18EB425F08D0159262 /* JQCollectionViewAlignLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA2CC9B5591A0D12D334E6A370A29B4 /* JQCollectionViewAlignLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BAB8AB16F896D2DE7C30804AF6FF7D5 /* JQCollectionViewAlignLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D119E24D18A6657ED6C11399154C2B /* JQCollectionViewAlignLayout-dummy.m */; };
+		2E4744CF91740A182D8804A940669A5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		3B15511C9F9146AF658EDBF0C508400F /* JQCollectionViewAlignLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE3DD173DB1C75C63D82D95DA9B5B75 /* JQCollectionViewAlignLayout.m */; };
+		684963409D46A652876B40C07E2715ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		90B6ECFD3B796B425670312F5555E0D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		BC28EED9393510011F3B124F00841DF7 /* JQCollectionViewAlignLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11978634F5BC7070655C2D329E7B0E83 /* JQCollectionViewAlignLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C29098957BF21E1BFC1EBE32A8729593 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE42C82F334A195EEB6D9F9B5F881E6 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */; };
+		D711A590C5B7D2D3DD0220C63895F57E /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05345073D6611CB6F26AE2A453AFA450 /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBF3AD49D586D6ED2B0718F970DEE45F /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70D6135DF31E497DCF81A67F5D5015C2 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7E70C19CC5CDC310AF61F697C43AFEE /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 922D67CE20FB5E47A5DB332EBAD94CAB /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		393676AAE63097EEB821A7FF367D4344 /* PBXContainerItemProxy */ = {
+		0427263B286960CF6652CE46ECF4681B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AD35B9559FA798C1573A67008EE175B7;
+			remoteGlobalIDString = 906667F691C9E50926C733FCAEA3448D;
 			remoteInfo = "Pods-JQCollectionViewAlignLayout_Example";
 		};
-		B16674615EA4081C752AA3689883E960 /* PBXContainerItemProxy */ = {
+		BB297A0FAB72F8C5B0875BA6B72804F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F2AD8042E63250F61E74E92E20C03C78;
+			remoteGlobalIDString = BC7A257B27063EC86F97553D25399AD1;
 			remoteInfo = JQCollectionViewAlignLayout;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D90C41DCFA38E5D0846D9C9E3B285CE /* Pods-JQCollectionViewAlignLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewAlignLayout_Example.modulemap"; sourceTree = "<group>"; };
-		1763CFD8294428BD12C45DF35F955F78 /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
+		05345073D6611CB6F26AE2A453AFA450 /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewAlignLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0F3F8C793A4597D8DBED95A3E4EDDA45 /* JQCollectionViewAlignLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JQCollectionViewAlignLayout.xcconfig; sourceTree = "<group>"; };
+		11978634F5BC7070655C2D329E7B0E83 /* JQCollectionViewAlignLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewAlignLayout-umbrella.h"; sourceTree = "<group>"; };
 		1919D1E9A66AADDBEDBDE1AB61111EA2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		33F68B3152B0DBC7B58887C586CEAC6D /* JQCollectionViewAlignLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewAlignLayout-prefix.pch"; sourceTree = "<group>"; };
+		1FABA0A8DE3CCD959C9318D9D24724DB /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		219D065AD45FE9127D2DF513FA4C193C /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		21D00D54874A776CBD641C242890E7F5 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2499057DD3D087ECEF2279EBFDF8D71D /* Pods-JQCollectionViewAlignLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewAlignLayout_Example.modulemap"; sourceTree = "<group>"; };
+		3547FF363BF61137E8C9340C08FADF4D /* Pods-JQCollectionViewAlignLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewAlignLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
 		37FBDD98E4F50B327535B543577CDEDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		410F491E1FF26C0BCADE3BAAE3DAC832 /* Pods-JQCollectionViewAlignLayout_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewAlignLayout_Tests-resources.sh"; sourceTree = "<group>"; };
-		53067394079543AAB2DB138639BEC837 /* JQCollectionViewAlignLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JQCollectionViewAlignLayout-dummy.m"; sourceTree = "<group>"; };
-		57466054071D166D1F681A97CC511121 /* JQCollectionViewAlignLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JQCollectionViewAlignLayout.modulemap; sourceTree = "<group>"; };
-		60B1B7D5C17177F76922027635484EB3 /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		65048FC02CD35EC43E73EBFE1A7831AD /* Pods-JQCollectionViewAlignLayout_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewAlignLayout_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6621907E2DE526CC7C5CDB7D12624F99 /* Pods-JQCollectionViewAlignLayout_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewAlignLayout_Example-resources.sh"; sourceTree = "<group>"; };
-		6A6184FDE9BD38C89E03FABB0864496A /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		44DFB9179A2CE749AD897DD476D5642A /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6EA2CC9B5591A0D12D334E6A370A29B4 /* JQCollectionViewAlignLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JQCollectionViewAlignLayout.h; path = JQCollectionViewAlignLayout/Classes/JQCollectionViewAlignLayout.h; sourceTree = "<group>"; };
-		74A095EDF10752C06E6CC7539148ED02 /* Pods-JQCollectionViewAlignLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewAlignLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
-		7ACD72430EAFE453B4460FE79CD625FD /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewAlignLayout_Tests-dummy.m"; sourceTree = "<group>"; };
-		80A98ABFCF1FA0416206DF7A1EDCA7B6 /* JQCollectionViewAlignLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewAlignLayout-umbrella.h"; sourceTree = "<group>"; };
-		88552A91AE5422CFCBDC297B672000E5 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		70984CB2A4F26E23BE76E99DC4D1E047 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		70D6135DF31E497DCF81A67F5D5015C2 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewAlignLayout_Example-umbrella.h"; sourceTree = "<group>"; };
+		7A9AB03664D470E31A21015E02B79F47 /* JQCollectionViewAlignLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JQCollectionViewAlignLayout.modulemap; sourceTree = "<group>"; };
+		7EF45F837C926F07D7081B9D3146636F /* Pods-JQCollectionViewAlignLayout_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Tests-Info.plist"; sourceTree = "<group>"; };
+		86D119E24D18A6657ED6C11399154C2B /* JQCollectionViewAlignLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JQCollectionViewAlignLayout-dummy.m"; sourceTree = "<group>"; };
 		8AE3DD173DB1C75C63D82D95DA9B5B75 /* JQCollectionViewAlignLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JQCollectionViewAlignLayout.m; path = JQCollectionViewAlignLayout/Classes/JQCollectionViewAlignLayout.m; sourceTree = "<group>"; };
-		8B3F410AF08F6DD2312835C3C756EAD5 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewAlignLayout_Example-umbrella.h"; sourceTree = "<group>"; };
+		8D2CEBCD06EC780C3C2ACD7E8335DD4F /* Pods-JQCollectionViewAlignLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewAlignLayout_Tests.modulemap"; sourceTree = "<group>"; };
 		8F377F002716C5BF606B847C428489A1 /* JQCollectionViewAlignLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JQCollectionViewAlignLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		90071307082749B03B01B38D42A16ECB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		922D67CE20FB5E47A5DB332EBAD94CAB /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewAlignLayout_Tests-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D75FF237A8B632F203CEFF8D14697F0 /* Pods-JQCollectionViewAlignLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewAlignLayout_Tests.modulemap"; sourceTree = "<group>"; };
-		A7125E91CF1CA475B1A2E785677D28C4 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A96E000E4C84B5E868C8C1A5A7661DD4 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewAlignLayout_Example-dummy.m"; sourceTree = "<group>"; };
-		B10D4EFA063E67EAE40382C7066DF1E9 /* JQCollectionViewAlignLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JQCollectionViewAlignLayout.xcconfig; sourceTree = "<group>"; };
+		989230BF85696F47B2908F9F7505C508 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AA64ED365BE50575DE81A84AFC45E349 /* Pods-JQCollectionViewAlignLayout_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Example-Info.plist"; sourceTree = "<group>"; };
 		B5FAFDC4FF5E02F9B5E29B1FCCB79984 /* JQCollectionViewAlignLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JQCollectionViewAlignLayout.framework; path = JQCollectionViewAlignLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDD632799F093C050F678E924D68018E /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewAlignLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
 		BF524E77A1D911A627CC311A91E6DAAC /* Pods_JQCollectionViewAlignLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewAlignLayout_Example.framework; path = "Pods-JQCollectionViewAlignLayout_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E763373B5FF136A46233012694F998 /* Pods_JQCollectionViewAlignLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewAlignLayout_Tests.framework; path = "Pods-JQCollectionViewAlignLayout_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0E2A63CAAD446DB603C957139D51103 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F21E50AD5CAF2E100BC7ED8532ED9DE5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9B39AF83EDA4B53CB5E58948E12C9C9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA93F0CD816582C2FAAA0420D7B513D9 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FDE3D5EEA4B898999F789761B5CFAF73 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC9D64D72322C9AD8D0D81CAFD9AA8B2 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E48C3128894439EDC880D7FDCDE78211 /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		EEE42C82F334A195EEB6D9F9B5F881E6 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewAlignLayout_Example-dummy.m"; sourceTree = "<group>"; };
+		F0D8FD2CD84A3CE4AF377444C3451763 /* JQCollectionViewAlignLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewAlignLayout-prefix.pch"; sourceTree = "<group>"; };
+		F6CF3FB8D16BC8923F9CF8EEDA93B652 /* JQCollectionViewAlignLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JQCollectionViewAlignLayout-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		55F3534A3D09883FEE5D968AD203C93A /* Frameworks */ = {
+		08B566CBA49F39E1C8AD6C6B54CDC6D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D85C6043B5BFBD2AB2D05B8ABA1ADAB /* Foundation.framework in Frameworks */,
+				684963409D46A652876B40C07E2715ED /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68F07354EE437C22DAA6734C9BB3E1C9 /* Frameworks */ = {
+		0E9FB26A05E15943457B4D0CFB468318 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCE6ED64F7CFF0188DEAD2559042A324 /* Foundation.framework in Frameworks */,
+				2E4744CF91740A182D8804A940669A5B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB8CEBC015515DF68AEAE9D844978316 /* Frameworks */ = {
+		42EE3BD71EDC5E5CEB53CE7B41B578ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5EA399EF4F521F769C793703C49F2D /* Foundation.framework in Frameworks */,
+				90B6ECFD3B796B425670312F5555E0D7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0497276823CA3FA6A1D426CDB078A2EB /* Pods-JQCollectionViewAlignLayout_Example */ = {
+			isa = PBXGroup;
+			children = (
+				2499057DD3D087ECEF2279EBFDF8D71D /* Pods-JQCollectionViewAlignLayout_Example.modulemap */,
+				989230BF85696F47B2908F9F7505C508 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown */,
+				21D00D54874A776CBD641C242890E7F5 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist */,
+				EEE42C82F334A195EEB6D9F9B5F881E6 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */,
+				3547FF363BF61137E8C9340C08FADF4D /* Pods-JQCollectionViewAlignLayout_Example-frameworks.sh */,
+				AA64ED365BE50575DE81A84AFC45E349 /* Pods-JQCollectionViewAlignLayout_Example-Info.plist */,
+				70D6135DF31E497DCF81A67F5D5015C2 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */,
+				E48C3128894439EDC880D7FDCDE78211 /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */,
+				44DFB9179A2CE749AD897DD476D5642A /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */,
+			);
+			name = "Pods-JQCollectionViewAlignLayout_Example";
+			path = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example";
+			sourceTree = "<group>";
+		};
 		0C595768646AE0B3D1B50B6B5EED3371 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +132,35 @@
 				6EA2CC9B5591A0D12D334E6A370A29B4 /* JQCollectionViewAlignLayout.h */,
 				8AE3DD173DB1C75C63D82D95DA9B5B75 /* JQCollectionViewAlignLayout.m */,
 				ABA15113E784E8DD5009D657DAF719D0 /* Pod */,
-				8095CB213D36FFD7D0C547D42E6CACF5 /* Support Files */,
+				A80FBF99924BF9AD5A6D5B2EDE3CB445 /* Support Files */,
 			);
 			name = JQCollectionViewAlignLayout;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		2D80816AFCC2E4EEEC3D313946612F6B /* Pods-JQCollectionViewAlignLayout_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8D2CEBCD06EC780C3C2ACD7E8335DD4F /* Pods-JQCollectionViewAlignLayout_Tests.modulemap */,
+				1FABA0A8DE3CCD959C9318D9D24724DB /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown */,
+				DC9D64D72322C9AD8D0D81CAFD9AA8B2 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist */,
+				922D67CE20FB5E47A5DB332EBAD94CAB /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */,
+				7EF45F837C926F07D7081B9D3146636F /* Pods-JQCollectionViewAlignLayout_Tests-Info.plist */,
+				05345073D6611CB6F26AE2A453AFA450 /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */,
+				219D065AD45FE9127D2DF513FA4C193C /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */,
+				70984CB2A4F26E23BE76E99DC4D1E047 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */,
+			);
+			name = "Pods-JQCollectionViewAlignLayout_Tests";
+			path = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests";
+			sourceTree = "<group>";
+		};
+		2E1F30940596BDE20BC1C5B3B1A3735F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0497276823CA3FA6A1D426CDB078A2EB /* Pods-JQCollectionViewAlignLayout_Example */,
+				2D80816AFCC2E4EEEC3D313946612F6B /* Pods-JQCollectionViewAlignLayout_Tests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		4943AE00EAD10E457A233EF75C8E4075 /* Products */ = {
@@ -134,22 +173,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607A2DB06F2F56419851B7C0CDEBBBD8 /* Pods-JQCollectionViewAlignLayout_Tests */ = {
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				90071307082749B03B01B38D42A16ECB /* Info.plist */,
-				9D75FF237A8B632F203CEFF8D14697F0 /* Pods-JQCollectionViewAlignLayout_Tests.modulemap */,
-				88552A91AE5422CFCBDC297B672000E5 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.markdown */,
-				A7125E91CF1CA475B1A2E785677D28C4 /* Pods-JQCollectionViewAlignLayout_Tests-acknowledgements.plist */,
-				7ACD72430EAFE453B4460FE79CD625FD /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m */,
-				65048FC02CD35EC43E73EBFE1A7831AD /* Pods-JQCollectionViewAlignLayout_Tests-frameworks.sh */,
-				410F491E1FF26C0BCADE3BAAE3DAC832 /* Pods-JQCollectionViewAlignLayout_Tests-resources.sh */,
-				BDD632799F093C050F678E924D68018E /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h */,
-				60B1B7D5C17177F76922027635484EB3 /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */,
-				F0E2A63CAAD446DB603C957139D51103 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */,
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
 			);
-			name = "Pods-JQCollectionViewAlignLayout_Tests";
-			path = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -159,31 +188,22 @@
 				0C595768646AE0B3D1B50B6B5EED3371 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				4943AE00EAD10E457A233EF75C8E4075 /* Products */,
-				A037A3CE4A10D2B6FE25D8ACC79578E0 /* Targets Support Files */,
+				2E1F30940596BDE20BC1C5B3B1A3735F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8095CB213D36FFD7D0C547D42E6CACF5 /* Support Files */ = {
+		A80FBF99924BF9AD5A6D5B2EDE3CB445 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F21E50AD5CAF2E100BC7ED8532ED9DE5 /* Info.plist */,
-				57466054071D166D1F681A97CC511121 /* JQCollectionViewAlignLayout.modulemap */,
-				B10D4EFA063E67EAE40382C7066DF1E9 /* JQCollectionViewAlignLayout.xcconfig */,
-				53067394079543AAB2DB138639BEC837 /* JQCollectionViewAlignLayout-dummy.m */,
-				33F68B3152B0DBC7B58887C586CEAC6D /* JQCollectionViewAlignLayout-prefix.pch */,
-				80A98ABFCF1FA0416206DF7A1EDCA7B6 /* JQCollectionViewAlignLayout-umbrella.h */,
+				7A9AB03664D470E31A21015E02B79F47 /* JQCollectionViewAlignLayout.modulemap */,
+				0F3F8C793A4597D8DBED95A3E4EDDA45 /* JQCollectionViewAlignLayout.xcconfig */,
+				86D119E24D18A6657ED6C11399154C2B /* JQCollectionViewAlignLayout-dummy.m */,
+				F6CF3FB8D16BC8923F9CF8EEDA93B652 /* JQCollectionViewAlignLayout-Info.plist */,
+				F0D8FD2CD84A3CE4AF377444C3451763 /* JQCollectionViewAlignLayout-prefix.pch */,
+				11978634F5BC7070655C2D329E7B0E83 /* JQCollectionViewAlignLayout-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/JQCollectionViewAlignLayout";
-			sourceTree = "<group>";
-		};
-		A037A3CE4A10D2B6FE25D8ACC79578E0 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DCF15602AC02A0D7B29AC13DA1B7AC0E /* Pods-JQCollectionViewAlignLayout_Example */,
-				607A2DB06F2F56419851B7C0CDEBBBD8 /* Pods-JQCollectionViewAlignLayout_Tests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		ABA15113E784E8DD5009D657DAF719D0 /* Pod */ = {
@@ -199,111 +219,69 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		DCF15602AC02A0D7B29AC13DA1B7AC0E /* Pods-JQCollectionViewAlignLayout_Example */ = {
-			isa = PBXGroup;
-			children = (
-				F9B39AF83EDA4B53CB5E58948E12C9C9 /* Info.plist */,
-				0D90C41DCFA38E5D0846D9C9E3B285CE /* Pods-JQCollectionViewAlignLayout_Example.modulemap */,
-				FA93F0CD816582C2FAAA0420D7B513D9 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.markdown */,
-				FDE3D5EEA4B898999F789761B5CFAF73 /* Pods-JQCollectionViewAlignLayout_Example-acknowledgements.plist */,
-				A96E000E4C84B5E868C8C1A5A7661DD4 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m */,
-				74A095EDF10752C06E6CC7539148ED02 /* Pods-JQCollectionViewAlignLayout_Example-frameworks.sh */,
-				6621907E2DE526CC7C5CDB7D12624F99 /* Pods-JQCollectionViewAlignLayout_Example-resources.sh */,
-				8B3F410AF08F6DD2312835C3C756EAD5 /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h */,
-				6A6184FDE9BD38C89E03FABB0864496A /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */,
-				1763CFD8294428BD12C45DF35F955F78 /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */,
-			);
-			name = "Pods-JQCollectionViewAlignLayout_Example";
-			path = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		08262C47433C403BBA4905C1B0A5C02C /* Headers */ = {
+		80A29B680E6AC880ECB9F83AFB07EB34 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B70C25ED4D2EB9C42B652F6BE2A06E4F /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h in Headers */,
+				D711A590C5B7D2D3DD0220C63895F57E /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		391C8093FB3D95B22AD4711021478104 /* Headers */ = {
+		D4D9AAFAD920B2D86C6A8CDD34266CDB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2A44AA42ADB762ED978C555B4D4E7B1 /* JQCollectionViewAlignLayout-umbrella.h in Headers */,
-				EBBC19A0C927222C2CCBC5B2B42CD479 /* JQCollectionViewAlignLayout.h in Headers */,
+				DBF3AD49D586D6ED2B0718F970DEE45F /* Pods-JQCollectionViewAlignLayout_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E517DCED509C94BEBCE88D595F6C9FFC /* Headers */ = {
+		DA6C23285FC36B7337497EA49B95CE7E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2FDAEA22ACB568F2B713BFB47B0AA24 /* Pods-JQCollectionViewAlignLayout_Tests-umbrella.h in Headers */,
+				BC28EED9393510011F3B124F00841DF7 /* JQCollectionViewAlignLayout-umbrella.h in Headers */,
+				16C7FB7D952EAE18EB425F08D0159262 /* JQCollectionViewAlignLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AD35B9559FA798C1573A67008EE175B7 /* Pods-JQCollectionViewAlignLayout_Example */ = {
+		906667F691C9E50926C733FCAEA3448D /* Pods-JQCollectionViewAlignLayout_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32DB95AD359275E3BC03506D8700D7B5 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Example" */;
+			buildConfigurationList = EF93B22E01D9EF1E33AAA1B7B7873C05 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Example" */;
 			buildPhases = (
-				6F96FA585F646A2D304B3189D076FA13 /* Sources */,
-				55F3534A3D09883FEE5D968AD203C93A /* Frameworks */,
-				08262C47433C403BBA4905C1B0A5C02C /* Headers */,
+				D4D9AAFAD920B2D86C6A8CDD34266CDB /* Headers */,
+				93FD325506A5C66D2B493B7DAEAD8469 /* Sources */,
+				08B566CBA49F39E1C8AD6C6B54CDC6D6 /* Frameworks */,
+				69601ACADB6876F88C22624A67E49B1F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9FD93785BCD832E97390599C4668BAD8 /* PBXTargetDependency */,
+				F2674DD17D59E8E554E4979AFAACE1DC /* PBXTargetDependency */,
 			);
 			name = "Pods-JQCollectionViewAlignLayout_Example";
 			productName = "Pods-JQCollectionViewAlignLayout_Example";
 			productReference = BF524E77A1D911A627CC311A91E6DAAC /* Pods_JQCollectionViewAlignLayout_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF67A01A2481B59B0F887BCEBC195162 /* Pods-JQCollectionViewAlignLayout_Tests */ = {
+		BC7A257B27063EC86F97553D25399AD1 /* JQCollectionViewAlignLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25FAC3A89784E94AEF729FB2B388BEBD /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Tests" */;
+			buildConfigurationList = 55FFFA68AC4EFF80A3996A7756FE398A /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout" */;
 			buildPhases = (
-				8D67E85D3E88CF379D0CD68CC66A05E2 /* Sources */,
-				68F07354EE437C22DAA6734C9BB3E1C9 /* Frameworks */,
-				E517DCED509C94BEBCE88D595F6C9FFC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C40E71CFA7B159F38C1C0F229E9AB25 /* PBXTargetDependency */,
-			);
-			name = "Pods-JQCollectionViewAlignLayout_Tests";
-			productName = "Pods-JQCollectionViewAlignLayout_Tests";
-			productReference = C6E763373B5FF136A46233012694F998 /* Pods_JQCollectionViewAlignLayout_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F2AD8042E63250F61E74E92E20C03C78 /* JQCollectionViewAlignLayout */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9A2F6373B55E70E5DB1A8A5F0D840D7 /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout" */;
-			buildPhases = (
-				BDBD5C6D70D73385896A0953C6B69CA6 /* Sources */,
-				EB8CEBC015515DF68AEAE9D844978316 /* Frameworks */,
-				391C8093FB3D95B22AD4711021478104 /* Headers */,
+				DA6C23285FC36B7337497EA49B95CE7E /* Headers */,
+				659EC08894E17A504A4CBFCE6179C877 /* Sources */,
+				0E9FB26A05E15943457B4D0CFB468318 /* Frameworks */,
+				EC61B92395B29A7D5CB9C8EBD0C0C790 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -312,6 +290,25 @@
 			name = JQCollectionViewAlignLayout;
 			productName = JQCollectionViewAlignLayout;
 			productReference = B5FAFDC4FF5E02F9B5E29B1FCCB79984 /* JQCollectionViewAlignLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8967BFF8F935972E8E8341AF72C82A4 /* Pods-JQCollectionViewAlignLayout_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7628D99065B8B99B7096480283A1DFE5 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Tests" */;
+			buildPhases = (
+				80A29B680E6AC880ECB9F83AFB07EB34 /* Headers */,
+				42B9EDEDE845A347995D2A8DD09F5398 /* Sources */,
+				42EE3BD71EDC5E5CEB53CE7B41B578ED /* Frameworks */,
+				6D8B154AE04814948314AAA9593C4E4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5966453D733F5D7C77729A600CD5D3A2 /* PBXTargetDependency */,
+			);
+			name = "Pods-JQCollectionViewAlignLayout_Tests";
+			productName = "Pods-JQCollectionViewAlignLayout_Tests";
+			productReference = C6E763373B5FF136A46233012694F998 /* Pods_JQCollectionViewAlignLayout_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -335,62 +332,85 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F2AD8042E63250F61E74E92E20C03C78 /* JQCollectionViewAlignLayout */,
-				AD35B9559FA798C1573A67008EE175B7 /* Pods-JQCollectionViewAlignLayout_Example */,
-				BF67A01A2481B59B0F887BCEBC195162 /* Pods-JQCollectionViewAlignLayout_Tests */,
+				BC7A257B27063EC86F97553D25399AD1 /* JQCollectionViewAlignLayout */,
+				906667F691C9E50926C733FCAEA3448D /* Pods-JQCollectionViewAlignLayout_Example */,
+				E8967BFF8F935972E8E8341AF72C82A4 /* Pods-JQCollectionViewAlignLayout_Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		69601ACADB6876F88C22624A67E49B1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8B154AE04814948314AAA9593C4E4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC61B92395B29A7D5CB9C8EBD0C0C790 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		6F96FA585F646A2D304B3189D076FA13 /* Sources */ = {
+		42B9EDEDE845A347995D2A8DD09F5398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5F8B57B547D597753AE6523F217E55 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m in Sources */,
+				E7E70C19CC5CDC310AF61F697C43AFEE /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D67E85D3E88CF379D0CD68CC66A05E2 /* Sources */ = {
+		659EC08894E17A504A4CBFCE6179C877 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8DED9B606042EC8E1838A8B40E94141 /* Pods-JQCollectionViewAlignLayout_Tests-dummy.m in Sources */,
+				1BAB8AB16F896D2DE7C30804AF6FF7D5 /* JQCollectionViewAlignLayout-dummy.m in Sources */,
+				3B15511C9F9146AF658EDBF0C508400F /* JQCollectionViewAlignLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDBD5C6D70D73385896A0953C6B69CA6 /* Sources */ = {
+		93FD325506A5C66D2B493B7DAEAD8469 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FC4D4B8909A2B7AF0130D2102523AA /* JQCollectionViewAlignLayout-dummy.m in Sources */,
-				B52FB9024E762B4F7094A1C7C493CB2F /* JQCollectionViewAlignLayout.m in Sources */,
+				C29098957BF21E1BFC1EBE32A8729593 /* Pods-JQCollectionViewAlignLayout_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C40E71CFA7B159F38C1C0F229E9AB25 /* PBXTargetDependency */ = {
+		5966453D733F5D7C77729A600CD5D3A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-JQCollectionViewAlignLayout_Example";
-			target = AD35B9559FA798C1573A67008EE175B7 /* Pods-JQCollectionViewAlignLayout_Example */;
-			targetProxy = 393676AAE63097EEB821A7FF367D4344 /* PBXContainerItemProxy */;
+			target = 906667F691C9E50926C733FCAEA3448D /* Pods-JQCollectionViewAlignLayout_Example */;
+			targetProxy = 0427263B286960CF6652CE46ECF4681B /* PBXContainerItemProxy */;
 		};
-		9FD93785BCD832E97390599C4668BAD8 /* PBXTargetDependency */ = {
+		F2674DD17D59E8E554E4979AFAACE1DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JQCollectionViewAlignLayout;
-			target = F2AD8042E63250F61E74E92E20C03C78 /* JQCollectionViewAlignLayout */;
-			targetProxy = B16674615EA4081C752AA3689883E960 /* PBXContainerItemProxy */;
+			target = BC7A257B27063EC86F97553D25399AD1 /* JQCollectionViewAlignLayout */;
+			targetProxy = BB297A0FAB72F8C5B0875BA6B72804F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B79554B85F93A4B2636CA5FA9D3A44C /* Debug */ = {
+		016D96A2BA69B97298EA045353B7FC42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A6184FDE9BD38C89E03FABB0864496A /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */;
+			baseConfigurationReference = 0F3F8C793A4597D8DBED95A3E4EDDA45 /* JQCollectionViewAlignLayout.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -400,28 +420,116 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout.modulemap";
+				PRODUCT_MODULE_NAME = JQCollectionViewAlignLayout;
+				PRODUCT_NAME = JQCollectionViewAlignLayout;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56A05ADD3BABDA1B56D1F979845809B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		60AAC6F1E065642E36050D1B15EA011B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3F8C793A4597D8DBED95A3E4EDDA45 /* JQCollectionViewAlignLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout.modulemap";
+				PRODUCT_MODULE_NAME = JQCollectionViewAlignLayout;
+				PRODUCT_NAME = JQCollectionViewAlignLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		1311B8EC718F7CEA93440ED79B11E538 /* Release */ = {
+		ABA6D6369305CC729EB7C46D4A1AF697 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1763CFD8294428BD12C45DF35F955F78 /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */;
+			baseConfigurationReference = 70984CB2A4F26E23BE76E99DC4D1E047 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -433,12 +541,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -453,9 +561,9 @@
 			};
 			name = Release;
 		};
-		1FE21A7CE53A315491BC8BC53755A881 /* Debug */ = {
+		BCEEDE619DA3F0A355897E69A0C19FD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60B1B7D5C17177F76922027635484EB3 /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */;
+			baseConfigurationReference = 219D065AD45FE9127D2DF513FA4C193C /* Pods-JQCollectionViewAlignLayout_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -467,7 +575,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -486,41 +594,7 @@
 			};
 			name = Debug;
 		};
-		5AD7B97712ED5C295C8B7B494D5A4A88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0E2A63CAAD446DB603C957139D51103 /* Pods-JQCollectionViewAlignLayout_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Tests/Pods-JQCollectionViewAlignLayout_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -574,7 +648,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -583,118 +658,33 @@
 			};
 			name = Debug;
 		};
-		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+		DC076265598412FCBC5E8FD6C4D734D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44DFB9179A2CE749AD897DD476D5642A /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B5BEC424A70F58E76E5881EEE989DF2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B10D4EFA063E67EAE40382C7066DF1E9 /* JQCollectionViewAlignLayout.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JQCollectionViewAlignLayout/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout.modulemap";
-				PRODUCT_MODULE_NAME = JQCollectionViewAlignLayout;
-				PRODUCT_NAME = JQCollectionViewAlignLayout;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C73868261E805D94B955DE4CC4A11BD7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B10D4EFA063E67EAE40382C7066DF1E9 /* JQCollectionViewAlignLayout.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JQCollectionViewAlignLayout/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JQCollectionViewAlignLayout/JQCollectionViewAlignLayout.modulemap";
-				PRODUCT_MODULE_NAME = JQCollectionViewAlignLayout;
-				PRODUCT_NAME = JQCollectionViewAlignLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -702,41 +692,74 @@
 			};
 			name = Release;
 		};
+		EAD2F98F28E2A28A4ABBEC40F93CFA41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E48C3128894439EDC880D7FDCDE78211 /* Pods-JQCollectionViewAlignLayout_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		25FAC3A89784E94AEF729FB2B388BEBD /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FE21A7CE53A315491BC8BC53755A881 /* Debug */,
-				5AD7B97712ED5C295C8B7B494D5A4A88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
-				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+				BEFDB93BF207328A04F1220475D02C3B /* Debug */,
+				56A05ADD3BABDA1B56D1F979845809B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32DB95AD359275E3BC03506D8700D7B5 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Example" */ = {
+		55FFFA68AC4EFF80A3996A7756FE398A /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B79554B85F93A4B2636CA5FA9D3A44C /* Debug */,
-				1311B8EC718F7CEA93440ED79B11E538 /* Release */,
+				60AAC6F1E065642E36050D1B15EA011B /* Debug */,
+				016D96A2BA69B97298EA045353B7FC42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9A2F6373B55E70E5DB1A8A5F0D840D7 /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout" */ = {
+		7628D99065B8B99B7096480283A1DFE5 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B5BEC424A70F58E76E5881EEE989DF2F /* Debug */,
-				C73868261E805D94B955DE4CC4A11BD7 /* Release */,
+				BCEEDE619DA3F0A355897E69A0C19FD1 /* Debug */,
+				ABA6D6369305CC729EB7C46D4A1AF697 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF93B22E01D9EF1E33AAA1B7B7873C05 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewAlignLayout_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2F98F28E2A28A4ABBEC40F93CFA41 /* Debug */,
+				DC076265598412FCBC5E8FD6C4D734D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

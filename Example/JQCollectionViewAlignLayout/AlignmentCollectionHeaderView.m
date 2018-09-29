@@ -52,7 +52,7 @@
     }
 }
 
--(UILabel *)label {
+- (UILabel *)label {
     if (!_label) {
         UILabel *label = [[UILabel alloc] init];
         label.textAlignment = NSTextAlignmentCenter;

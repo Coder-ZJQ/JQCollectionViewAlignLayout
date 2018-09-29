@@ -10,6 +10,18 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ![Example](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/demo.gif?raw=true)
+
+## Alignment
+
+|                alignment                 |                demo image                |
+| :--------------------------------------: | :--------------------------------------: |
+| JQCollectionViewItemAlignmentFlow(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/flow.png?raw=true) |
+|    JQCollectionViewItemAlignmentLeft     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-left.png?raw=true) |
+|    JQCollectionViewItemAlignmentRight    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-right.png?raw=true) |
+|   JQCollectionViewItemAlignmentCenter    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-center.png?raw=true) |
+|    JQCollectionViewItemAlignmentTile     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/tile.png?raw=true) |
+
+
 ## Requirements
 iOS 6.0 +
 ## Installation
@@ -23,34 +35,28 @@ pod 'JQCollectionViewAlignLayout'
 
 ## Usage
 
-``` objective-c
-// setup the itemAlignment for all sections
-JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
-layout.itemAlignment = JQCollectionViewItemAlignmentLeft;
-UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-```
+1. init the collectionView with JQCollectionViewAlignLayout
 
 ``` objective-c
-// setup the itemAlignment for each section
-// 1. assign the layout delegate
-layout.delegate = self;
+JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
+UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+```
+2. setup the itemAlignment
+``` objective-c
+// you can set the itemAlignment for all sections by this:
+layout.itemAlignment = JQCollectionViewItemAlignmentLeft;
+
+// if you want set different itemAlignment for sections, you can do like this:
+// 1. conforms to protocol JQCollectionViewAlignLayoutDelegate
+@interface JQViewController () < UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
+    
 // 2. implement the protocol method
-- (JQCollectionViewItemAlignment)layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section {
+- (JQCollectionViewItemAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section {
   // return the JQCollectionViewItemAlignment in section.
 }
 ```
 
-## Alignment
-
-|                alignment                 |                demo image                |
-| :--------------------------------------: | :--------------------------------------: |
-| JQCollectionViewItemAlignmentFlow(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/flow.png?raw=true) |
-|    JQCollectionViewItemAlignmentLeft     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-left.png?raw=true) |
-|    JQCollectionViewItemAlignmentRight    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-right.png?raw=true) |
-|   JQCollectionViewItemAlignmentCenter    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-center.png?raw=true) |
-|    JQCollectionViewItemAlignmentTile     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/tile.png?raw=true) |
-
-
+3. the rest is the same as `UICollectionViewFlowLayout`.
 
 ## Author
 

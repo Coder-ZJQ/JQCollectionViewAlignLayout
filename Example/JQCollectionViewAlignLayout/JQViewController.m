@@ -10,24 +10,23 @@
 #import "JQCollectionViewAlignLayout.h"
 #import "AlignmentCollectionHeaderView.h"
 
-@interface JQViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
+@interface JQViewController () <UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
 
 /** data */
 @property (nonatomic, copy) NSArray *data;
 
 @end
 
-static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
-static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
+static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
+static NSString *const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
 @implementation JQViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
-    layout.delegate = self;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-    collectionView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+    collectionView.contentInset = UIEdgeInsetsMake(40, 40, 40, 40);
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -60,11 +59,13 @@ static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
     return CGSizeMake(0.f, 50.f);
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
     AlignmentCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderReuseIdentifier forIndexPath:indexPath];
     JQCollectionViewItemAlignment alignment = [self.data[indexPath.section][@"alignment"] integerValue];
     headerView.alignment = alignment;
@@ -84,7 +85,7 @@ static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
     [collectionView deleteItemsAtIndexPaths:@[indexPath]];
 }
 
-- (JQCollectionViewItemAlignment)layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section
+- (JQCollectionViewItemAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section
 {
     JQCollectionViewItemAlignment alignment = [self.data[section][@"alignment"] integerValue];
     return alignment;
@@ -98,7 +99,7 @@ static NSString * const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
         NSArray *alignments = @[@(JQCollectionViewItemAlignmentLeft), @(JQCollectionViewItemAlignmentRight), @(JQCollectionViewItemAlignmentCenter), @(JQCollectionViewItemAlignmentTile), @(JQCollectionViewItemAlignmentFlow)];
         for (NSNumber *alignment in alignments)
         {
-            int count = 40;
+            int count = 50;
             NSMutableArray *items = [[NSMutableArray alloc] init];
             for (int j = 0; j < count; j++)
             {
