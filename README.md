@@ -27,8 +27,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 |                 Direction                  |                          Demo Image                          |
 | :----------------------------------------: | :----------------------------------------------------------: |
-| JQCollectionViewItemsDirectionLTR(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/ltr.png?raw=true) |
-|     JQCollectionViewItemsDirectionRTL      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/rtl.png?raw=true) |
+| JQCollectionViewItemsDirectionLTR(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/d-ltr.png?raw=true) |
+|     JQCollectionViewItemsDirectionRTL      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/d-rtl.png?raw=true) |
 
 ## Requirements
 
