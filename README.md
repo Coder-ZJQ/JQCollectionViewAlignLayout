@@ -46,7 +46,7 @@ pod 'JQCollectionViewAlignLayout'
 
 **Init the collectionView with `JQCollectionViewAlignLayout`:**
 
-- code:
+- Code:
 
 ``` objective-c
 JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
@@ -58,7 +58,7 @@ UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.
 
 **Set the alignment and direction:**
 
-- property:
+- Property:
 
 ```objective-c
 layout.itemsHorizontalAlignment = JQCollectionViewItemsHorizontalAlignmentLeft;
@@ -66,7 +66,7 @@ layout.itemsVerticalAlignment = JQCollectionViewItemsVerticalAlignmentCenter;
 layout.itemsDirection = JQCollectionViewItemsDirectionLTR;
 ```
 
-- protocol:
+- Protocol:
 
 ```objective-c
 // (if you want set different alignment and direction each section, you can do like this.)

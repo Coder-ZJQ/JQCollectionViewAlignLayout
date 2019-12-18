@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JQCollectionViewAlignLayout'
   s.version          = '0.1.5'
-  s.summary          = 'Align left, center, right and tile UICollectionView layout.'
+  s.summary          = 'A UICollectionView layout that supports setting horizontal, vertical alignment and RTL direction.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Align left, center, right and tile UICollectionView layout based on UICollectionViewFlowLayout.
+A UICollectionView layout that supports setting horizontal, vertical alignment and RTL direction.
                        DESC
 
   s.homepage         = 'https://github.com/coder-zjq/JQCollectionViewAlignLayout'
-  s.screenshots      = 'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/align-left.png',
-                       'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/align-center.png',
-                       'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/align-right.png',
-                       'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/tile.png'
+  s.screenshots      = 'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/h-left.png',
+                       'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/h-center.png',
+                       'https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/h-right.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'coder-zjq' => 'zjq_joker@163.com' }
   s.source           = { :git => 'https://github.com/coder-zjq/JQCollectionViewAlignLayout.git', :tag => s.version.to_s }
