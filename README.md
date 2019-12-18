@@ -9,20 +9,29 @@
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-![Example](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/demo.gif?raw=true)
 
 ## Alignment
 
-|                alignment                 |                demo image                |
-| :--------------------------------------: | :--------------------------------------: |
-| JQCollectionViewItemAlignmentFlow(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/flow.png?raw=true) |
-|    JQCollectionViewItemAlignmentLeft     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-left.png?raw=true) |
-|    JQCollectionViewItemAlignmentRight    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-right.png?raw=true) |
-|   JQCollectionViewItemAlignmentCenter    | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/align-center.png?raw=true) |
-|    JQCollectionViewItemAlignmentTile     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/tile.png?raw=true) |
+|                      Horizontal                       |                          Demo Image                          |
+| :---------------------------------------------------: | :----------------------------------------------------------: |
+| JQCollectionViewItemsHorizontalAlignmentFlow(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-flow.png?raw=true) |
+|     JQCollectionViewItemsHorizontalAlignmentLeft      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-left.png?raw=true) |
+|    JQCollectionViewItemsHorizontalAlignmentCenter     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-center.png?raw=true) |
+|     JQCollectionViewItemsHorizontalAlignmentRight     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-right.png?raw=true) |
 
+|                       Vertical                        |                          Demo Image                          |
+| :---------------------------------------------------: | :----------------------------------------------------------: |
+| JQCollectionViewItemsVerticalAlignmentCenter(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/v-center.png?raw=true) |
+|       JQCollectionViewItemsVerticalAlignmentTop       | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/v-top.png?raw=true) |
+|     JQCollectionViewItemsVerticalAlignmentBottom      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/v-bottom.png?raw=true) |
+
+|                 Direction                  |                          Demo Image                          |
+| :----------------------------------------: | :----------------------------------------------------------: |
+| JQCollectionViewItemsDirectionLTR(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/ltr.png?raw=true) |
+|     JQCollectionViewItemsDirectionRTL      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/rtl.png?raw=true) |
 
 ## Requirements
+
 iOS 6.0 +
 ## Installation
 
@@ -35,28 +44,55 @@ pod 'JQCollectionViewAlignLayout'
 
 ## Usage
 
-1. init the collectionView with JQCollectionViewAlignLayout
+**Init the collectionView with `JQCollectionViewAlignLayout`:**
+
+- code:
 
 ``` objective-c
 JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
 UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
 ```
-2. setup the itemAlignment
-``` objective-c
-// you can set the itemAlignment for all sections by this:
-layout.itemAlignment = JQCollectionViewItemAlignmentLeft;
+- Interface Builder:
 
-// if you want set different itemAlignment for sections, you can do like this:
-// 1. conforms to protocol JQCollectionViewAlignLayoutDelegate
-@interface JQViewController () < UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
-    
-// 2. implement the protocol method
-- (JQCollectionViewItemAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section {
-  // return the JQCollectionViewItemAlignment in section.
-}
+![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/ib-setup.png?raw=true)
+
+**Set the alignment and direction:**
+
+- property:
+
+```objective-c
+layout.itemsHorizontalAlignment = JQCollectionViewItemsHorizontalAlignmentLeft;
+layout.itemsVerticalAlignment = JQCollectionViewItemsVerticalAlignmentCenter;
+layout.itemsDirection = JQCollectionViewItemsDirectionLTR;
 ```
 
-3. the rest is the same as `UICollectionViewFlowLayout`.
+- protocol:
+
+```objective-c
+// (if you want set different alignment and direction each section, you can do like this.)
+// 1. conforms to protocol JQCollectionViewAlignLayoutDelegate
+@interface JQViewController () < UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
+
+@end
+
+@implementation JQViewController
+// 2. implement the protocol method
+- (JQCollectionViewItemsHorizontalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsHorizontalAlignmentInSection:(NSInteger)section {
+  // return the JQCollectionViewItemsHorizontalAlignment in section.
+}
+
+- (JQCollectionViewItemsVerticalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsVerticalAlignmentInSection:(NSInteger)section {
+  // return the JQCollectionViewItemsVerticalAlignment in section.
+}
+
+- (JQCollectionViewItemsDirection)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsDirectionInSection:(NSInteger)section {
+  // return the JQCollectionViewItemsDirection in section.
+}
+
+@end
+```
+
+**The rest is same as `UICollectionViewFlowLayout`.**
 
 ## Author
 

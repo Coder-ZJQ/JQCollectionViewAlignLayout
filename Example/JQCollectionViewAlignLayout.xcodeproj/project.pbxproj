@@ -25,6 +25,8 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B033960BF36167C85A331F34 /* Pods_JQCollectionViewAlignLayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81855FB6510BFA9E5119DA7F /* Pods_JQCollectionViewAlignLayout_Example.framework */; };
 		F3041C8E1FFB80DC00A66B34 /* AlignmentCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3041C8D1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.m */; };
+		F3108C1523507F62007E8AAA /* JQSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3108C1423507F62007E8AAA /* JQSectionModel.m */; };
+		F397D6CE2362DBFC0095916D /* JQCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F397D6CD2362DBFC0095916D /* JQCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +68,13 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B2A2DE81FE7D258045B5709 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B782C4BD8CE8815745AFD43A /* Pods-JQCollectionViewAlignLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JQCollectionViewAlignLayout_Example/Pods-JQCollectionViewAlignLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E2D4CD660B24B5E85808FBBA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E2D4CD660B24B5E85808FBBA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		F3041C8C1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlignmentCollectionHeaderView.h; sourceTree = "<group>"; };
 		F3041C8D1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlignmentCollectionHeaderView.m; sourceTree = "<group>"; };
+		F3108C1323507F62007E8AAA /* JQSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JQSectionModel.h; sourceTree = "<group>"; };
+		F3108C1423507F62007E8AAA /* JQSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JQSectionModel.m; sourceTree = "<group>"; };
+		F397D6CC2362DBFC0095916D /* JQCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JQCollectionViewCell.h; sourceTree = "<group>"; };
+		F397D6CD2362DBFC0095916D /* JQCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JQCollectionViewCell.m; sourceTree = "<group>"; };
 		FDFA14EA73C4FA651482E65C /* JQCollectionViewAlignLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JQCollectionViewAlignLayout.podspec; path = ../JQCollectionViewAlignLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -142,9 +148,13 @@
 				6003F5A6195388D20070C39A /* JQViewController.m */,
 				F3041C8C1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.h */,
 				F3041C8D1FFB80DB00A66B34 /* AlignmentCollectionHeaderView.m */,
+				F3108C1323507F62007E8AAA /* JQSectionModel.h */,
+				F3108C1423507F62007E8AAA /* JQSectionModel.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				F397D6CC2362DBFC0095916D /* JQCollectionViewCell.h */,
+				F397D6CD2362DBFC0095916D /* JQCollectionViewCell.m */,
 			);
 			name = "Example for JQCollectionViewAlignLayout";
 			path = JQCollectionViewAlignLayout;
@@ -212,7 +222,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				07A9BE5CE283EB747E86839F /* [CP] Embed Pods Frameworks */,
+				514549078C376711F080AA05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,7 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JQ;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "coder-zjq";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
@@ -265,6 +275,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -302,7 +313,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07A9BE5CE283EB747E86839F /* [CP] Embed Pods Frameworks */ = {
+		514549078C376711F080AA05 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,6 +376,8 @@
 			files = (
 				6003F59E195388D20070C39A /* JQAppDelegate.m in Sources */,
 				F3041C8E1FFB80DC00A66B34 /* AlignmentCollectionHeaderView.m in Sources */,
+				F3108C1523507F62007E8AAA /* JQSectionModel.m in Sources */,
+				F397D6CE2362DBFC0095916D /* JQCollectionViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* JQViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -420,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -473,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

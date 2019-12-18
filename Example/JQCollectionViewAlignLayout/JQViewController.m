@@ -9,110 +9,129 @@
 #import "JQViewController.h"
 #import "JQCollectionViewAlignLayout.h"
 #import "AlignmentCollectionHeaderView.h"
+#import "JQSectionModel.h"
+#import "JQCollectionViewCell.h"
 
 @interface JQViewController () <UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
 
-/** data */
-@property (nonatomic, copy) NSArray *data;
+@property (nonatomic, copy) NSArray<JQSectionModel *> *data;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
 static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
 static NSString *const kHeaderReuseIdentifier = @"kHeaderReuseIdentifier";
+static NSString *const kFooterReuseIdentifier = @"kFooterReuseIdentifier";
 @implementation JQViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-    collectionView.contentInset = UIEdgeInsetsMake(40, 40, 40, 40);
-    collectionView.backgroundColor = [UIColor whiteColor];
-    collectionView.delegate = self;
-    collectionView.dataSource = self;
-    [self.view addSubview:collectionView];
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCellReuseIdentifier];
-    [collectionView registerClass:[AlignmentCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderReuseIdentifier];
+    
+    [JQCollectionViewAlignLayout new].itemsHorizontalAlignment = JQCollectionViewItemsHorizontalAlignmentLeft;
+    [JQCollectionViewAlignLayout new].itemsVerticalAlignment = JQCollectionViewItemsVerticalAlignmentCenter;
+    [JQCollectionViewAlignLayout new].itemsDirection = JQCollectionViewItemsDirectionLTR;
+    self.collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    [self.collectionView registerClass:[JQCollectionViewCell class] forCellWithReuseIdentifier:kCellReuseIdentifier];
+    [self.collectionView registerClass:[AlignmentCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderReuseIdentifier];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:kFooterReuseIdentifier];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+#pragma mark - UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.data.count;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    NSArray *arr = self.data[section][@"items"];
-    return arr.count;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.data[section].items.count;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(10, 10, 10, 10);
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellReuseIdentifier forIndexPath:indexPath];
-    NSArray *arr = self.data[indexPath.section][@"items"];
-    cell.backgroundColor = arr[indexPath.item][@"color"];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    JQCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellReuseIdentifier forIndexPath:indexPath];
+    cell.contentView.backgroundColor = self.data[indexPath.section].items[indexPath.item].color;
+    cell.title = [NSString stringWithFormat:@"%zd", self.data[indexPath.section].items[indexPath.item].index];
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    return CGSizeMake(0.f, 50.f);
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        AlignmentCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderReuseIdentifier forIndexPath:indexPath];
+        headerView.label.text = self.data[indexPath.section].alignmentDescription;
+        return headerView;
+    }
+    UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:kFooterReuseIdentifier forIndexPath:indexPath];
+    footer.backgroundColor = [UIColor darkGrayColor];
+    return footer;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    AlignmentCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kHeaderReuseIdentifier forIndexPath:indexPath];
-    JQCollectionViewItemAlignment alignment = [self.data[indexPath.section][@"alignment"] integerValue];
-    headerView.alignment = alignment;
-    return headerView;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray *arr = self.data[indexPath.section][@"items"];
-    return [arr[indexPath.item][@"size"] CGSizeValue];
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(0.f, 90.f);
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSMutableArray *arr = self.data[indexPath.section][@"items"];
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeMake(0, 44.f);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return self.data[indexPath.section].items[indexPath.item].size;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *arr = self.data[indexPath.section].items;
     [arr removeObjectAtIndex:indexPath.item];
-    [collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    [collectionView deleteItemsAtIndexPaths:@[ indexPath ]];
 }
 
-- (JQCollectionViewItemAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemAlignmentInSection:(NSInteger)section
-{
-    JQCollectionViewItemAlignment alignment = [self.data[section][@"alignment"] integerValue];
-    return alignment;
+- (JQCollectionViewItemsHorizontalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsHorizontalAlignmentInSection:(NSInteger)section {
+    return self.data[section].horizontalAlignment;
 }
 
-- (NSArray *)data
-{
-    if (!_data)
-    {
+- (JQCollectionViewItemsVerticalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsVerticalAlignmentInSection:(NSInteger)section {
+    return self.data[section].verticalAlignment;
+}
+
+- (JQCollectionViewItemsDirection)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsDirectionInSection:(NSInteger)section {
+    return self.data[section].direction;
+}
+
+#pragma mark - getter
+
+- (NSArray<JQSectionModel *> *)data {
+    if (!_data) {
         NSMutableArray *data = [[NSMutableArray alloc] init];
-        NSArray *alignments = @[@(JQCollectionViewItemAlignmentLeft), @(JQCollectionViewItemAlignmentRight), @(JQCollectionViewItemAlignmentCenter), @(JQCollectionViewItemAlignmentTile), @(JQCollectionViewItemAlignmentFlow)];
-        for (NSNumber *alignment in alignments)
-        {
-            int count = 50;
-            NSMutableArray *items = [[NSMutableArray alloc] init];
-            for (int j = 0; j < count; j++)
-            {
-                UIColor *color = [UIColor colorWithRed:arc4random() % 255 / 255.f green:arc4random() % 255 / 255.f blue:arc4random() % 255 / 255.f alpha:1.f];
-                NSValue *size = [NSValue valueWithCGSize:CGSizeMake((arc4random() % 5 + 5) * 8, (arc4random() % 5 + 5) * 3)];
-                [items addObject:@{ @"size": size, @"color": color }];
+        JQCollectionViewItemsVerticalAlignment verticalAlignments[] = {JQCollectionViewItemsVerticalAlignmentCenter, JQCollectionViewItemsVerticalAlignmentTop, JQCollectionViewItemsVerticalAlignmentBottom};
+        JQCollectionViewItemsHorizontalAlignment horizontalAlignments[] = {JQCollectionViewItemsHorizontalAlignmentCenter, JQCollectionViewItemsHorizontalAlignmentLeft, JQCollectionViewItemsHorizontalAlignmentRight, JQCollectionViewItemsHorizontalAlignmentFlow};
+        JQCollectionViewItemsDirection directions[] = {JQCollectionViewItemsDirectionLTR, JQCollectionViewItemsDirectionRTL};
+        for (int i = 0; i < 4; i++) {
+            JQCollectionViewItemsHorizontalAlignment horizontal = horizontalAlignments[i];
+            for (int j = 0; j < 3; j++) {
+                JQCollectionViewItemsVerticalAlignment vertical = verticalAlignments[j];
+                for (int k = 0; k < 2; k++) {
+                    JQCollectionViewItemsDirection direction = directions[k];
+                    int count = 50;
+                    NSMutableArray *items = [[NSMutableArray alloc] init];
+                    for (int j = 0; j < count; j++) {
+                        UIColor *color = [UIColor colorWithRed:arc4random() % 255 / 255.f green:arc4random() % 255 / 255.f blue:arc4random() % 255 / 255.f alpha:1.f];
+                        CGSize size = CGSizeMake((arc4random() % 5 + 5) * 8, (arc4random() % 5 + 5) * 3);
+                        JQSectionItemModel *item = [[JQSectionItemModel alloc] initWithColor:color size:size index:j];
+                        [items addObject:item];
+                    }
+                    JQSectionModel *section = [[JQSectionModel alloc] init];
+                    section.verticalAlignment = vertical;
+                    section.horizontalAlignment = horizontal;
+                    section.direction = direction;
+                    section.items = items;
+                    [data addObject:section];
+                }
             }
-            [data addObject:@{ @"alignment": alignment, @"items": items }];
+            _data = data;
         }
-        _data = data;
     }
     return _data;
 }
 
 @end
-

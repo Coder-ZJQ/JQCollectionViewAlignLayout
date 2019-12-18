@@ -10,6 +10,6 @@
 
 @interface AlignmentCollectionHeaderView : UICollectionReusableView
 
-@property (nonatomic) NSInteger alignment;
+@property (nonatomic, weak) UILabel *label;
 
 @end
