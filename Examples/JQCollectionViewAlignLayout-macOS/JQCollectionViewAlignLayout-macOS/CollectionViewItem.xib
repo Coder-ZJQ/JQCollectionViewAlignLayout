@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-ml-VVM">
+                    <rect key="frame" x="60" y="27" width="66" height="28"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Npg-6m-rsK">
+                        <font key="font" metaFont="systemBold" size="24"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eoc-ml-VVM" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="BfD-Rg-UHy"/>
+                <constraint firstItem="eoc-ml-VVM" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="L3I-xb-8FT"/>
+            </constraints>
+            <point key="canvasLocation" x="-7.5" y="187"/>
+        </customView>
+        <collectionViewItem identifier="kItemReuseIdentifier" id="Ga0-Mc-s5d" customClass="CollectionViewItem">
+            <connections>
+                <outlet property="label" destination="eoc-ml-VVM" id="6jH-xP-0jh"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="lOd-5M-Fkz"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>

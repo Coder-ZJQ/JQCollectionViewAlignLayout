@@ -1,0 +1,22 @@
+use_frameworks!
+
+workspace 'JQCollectionViewAlignLayout.xcworkspace'
+
+target 'JQCollectionViewAlignLayout-iOS' do
+  platform :ios, '9.0'
+  project 'JQCollectionViewAlignLayout-iOS/JQCollectionViewAlignLayout-iOS'
+  pod 'JQCollectionViewAlignLayout', :path => '../'
+end
+
+target 'JQCollectionViewAlignLayout-macOS' do
+  platform :osx, '10.11'
+  project 'JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout-macOS'
+  pod 'JQCollectionViewAlignLayout', :path => '../'
+end
+
+target 'JQCollectionViewAlignLayout-tvOS' do
+  platform :tvos
+  project 'JQCollectionViewAlignLayout-tvOS/JQCollectionViewAlignLayout-tvOS'
+  pod 'JQCollectionViewAlignLayout', :path => '../'
+end
+

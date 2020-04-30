@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JQCollectionViewAlignLayout'
-  s.version          = '0.1.5'
-  s.summary          = 'A UICollectionView layout that supports setting horizontal, vertical alignment and RTL direction.'
+  s.version          = '0.2.0'
+  s.summary          = 'A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A UICollectionView layout that supports setting horizontal, vertical alignment and RTL direction.
+A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.
+(available for both UICollectionView and NSCollectionView)
                        DESC
 
   s.homepage         = 'https://github.com/coder-zjq/JQCollectionViewAlignLayout'
@@ -29,8 +30,16 @@ A UICollectionView layout that supports setting horizontal, vertical alignment a
   s.author           = { 'coder-zjq' => 'zjq_joker@163.com' }
   s.source           = { :git => 'https://github.com/coder-zjq/JQCollectionViewAlignLayout.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  
+  s.source_files = 'JQCollectionViewAlignLayout/Classes/*'
+  
+  s.ios.frameworks = 'Foundation', 'UIKit'
+  s.tvos.frameworks = 'Foundation', 'UIKit'
+  s.osx.frameworks = 'Foundation', 'AppKit'
 
-  s.ios.deployment_target = '6.0'
-
-  s.source_files = 'JQCollectionViewAlignLayout/Classes/**/*'
+  s.ios.deployment_target = '6.0' # minimum SDK with autolayout
+  s.osx.deployment_target = '10.11' # minimum SDK with autolayout
+  s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
+  s.requires_arc = true
+  
 end

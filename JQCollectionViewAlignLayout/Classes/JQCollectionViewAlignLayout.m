@@ -18,16 +18,16 @@
 
 - (CGFloat)jq_minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
-        id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
+        id<JQCollectionViewAlignLayoutDelegate> delegate = (id<JQCollectionViewAlignLayoutDelegate>) self.collectionView.delegate;
         return [delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:section];
     } else {
         return self.minimumInteritemSpacing;
     }
 }
 
-- (UIEdgeInsets)jq_insetForSectionAtIndex:(NSInteger)section {
+- (JQEdgeInsets)jq_insetForSectionAtIndex:(NSInteger)section {
     if (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
-        id<UICollectionViewDelegateFlowLayout> delegate = (id<UICollectionViewDelegateFlowLayout>) self.collectionView.delegate;
+        id<JQCollectionViewAlignLayoutDelegate> delegate = (id<JQCollectionViewAlignLayoutDelegate>) self.collectionView.delegate;
         return [delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
     } else {
         return self.sectionInset;
@@ -72,23 +72,23 @@
     NSIndexPath *currentIndexPath = indexPath;
     NSIndexPath *previousIndexPath = indexPath.item == 0 ? nil : [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
 
-    UICollectionViewLayoutAttributes *currentAttributes = [super layoutAttributesForItemAtIndexPath:currentIndexPath];
-    UICollectionViewLayoutAttributes *previousAttributes = previousIndexPath ? [super layoutAttributesForItemAtIndexPath:previousIndexPath] : nil;
+    JQCollectionViewLayoutAttributes *currentAttributes = [super layoutAttributesForItemAtIndexPath:currentIndexPath];
+    JQCollectionViewLayoutAttributes *previousAttributes = previousIndexPath ? [super layoutAttributesForItemAtIndexPath:previousIndexPath] : nil;
     CGRect currentFrame = currentAttributes.frame;
     CGRect previousFrame = previousAttributes ? previousAttributes.frame : CGRectZero;
 
-    UIEdgeInsets insets = [self jq_insetForSectionAtIndex:currentIndexPath.section];
+    JQEdgeInsets insets = [self jq_insetForSectionAtIndex:currentIndexPath.section];
     CGRect currentLineFrame = CGRectMake(insets.left, currentFrame.origin.y, CGRectGetWidth(self.collectionView.frame), currentFrame.size.height);
     CGRect previousLineFrame = CGRectMake(insets.left, previousFrame.origin.y, CGRectGetWidth(self.collectionView.frame), previousFrame.size.height);
 
     return !CGRectIntersectsRect(currentLineFrame, previousLineFrame);
 }
 
-- (NSArray *)jq_lineAttributesArrayWithStartAttributes:(UICollectionViewLayoutAttributes *)startAttributes {
+- (NSArray *)jq_lineAttributesArrayWithStartAttributes:(JQCollectionViewLayoutAttributes *)startAttributes {
     NSMutableArray *lineAttributesArray = [[NSMutableArray alloc] init];
     [lineAttributesArray addObject:startAttributes];
     NSInteger itemCount = [self.collectionView numberOfItemsInSection:startAttributes.indexPath.section];
-    UIEdgeInsets insets = [self jq_insetForSectionAtIndex:startAttributes.indexPath.section];
+    JQEdgeInsets insets = [self jq_insetForSectionAtIndex:startAttributes.indexPath.section];
     NSInteger index = startAttributes.indexPath.item;
     BOOL isLineEnd = index == itemCount - 1;
     while (!isLineEnd) {
@@ -96,7 +96,7 @@
         if (index == itemCount)
             break;
         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:index inSection:startAttributes.indexPath.section];
-        UICollectionViewLayoutAttributes *nextAttributes = [super layoutAttributesForItemAtIndexPath:nextIndexPath];
+        JQCollectionViewLayoutAttributes *nextAttributes = [super layoutAttributesForItemAtIndexPath:nextIndexPath];
         CGRect nextLineFrame = CGRectMake(insets.left, nextAttributes.frame.origin.y, CGRectGetWidth(self.collectionView.frame), nextAttributes.frame.size.height);
         isLineEnd = !CGRectIntersectsRect(startAttributes.frame, nextLineFrame);
         if (isLineEnd)
@@ -104,6 +104,26 @@
         [lineAttributesArray addObject:nextAttributes];
     }
     return lineAttributesArray;
+}
+
+@end
+
+@implementation NSValue (JQ)
+
+- (CGRect)jq_rectValue {
+#if TARGET_OS_IPHONE || TARGET_OS_TV
+    return self.CGRectValue;
+#elif TARGET_OS_MAC
+    return self.rectValue;
+#endif
+}
+
+- (CGPoint)jq_pointValue {
+#if TARGET_OS_IPHONE || TARGET_OS_TV
+    return self.CGPointValue;
+#elif TARGET_OS_MAC
+    return self.pointValue;
+#endif
 }
 
 @end
@@ -118,37 +138,43 @@
     return self.cachedOrigin[indexPath];
 }
 
-- (void)jq_calculateAndCacheOriginForItemAttributesArray:(NSArray<UICollectionViewLayoutAttributes *> *)array {
+- (void)jq_calculateAndCacheOriginForItemAttributesArray:(NSArray<JQCollectionViewLayoutAttributes *> *)array {
     NSInteger section = [array firstObject].indexPath.section;
 
-    //******************** layout infos ********************//
+    //******************** 相关布局属性 ********************//
     JQCollectionViewItemsHorizontalAlignment horizontalAlignment = [self jq_itemsHorizontalAlignmentForSectionAtIndex:section];
     JQCollectionViewItemsVerticalAlignment verticalAlignment = [self jq_itemsVerticalAlignmentForSectionAtIndex:section];
     JQCollectionViewItemsDirection direction = [self jq_itemsDirectionForSectionAtIndex:section];
     BOOL isR2L = direction == JQCollectionViewItemsDirectionRTL;
-    UIEdgeInsets sectionInsets = [self jq_insetForSectionAtIndex:section];
+    JQEdgeInsets sectionInsets = [self jq_insetForSectionAtIndex:section];
     CGFloat minimumInteritemSpacing = [self jq_minimumInteritemSpacingForSectionAtIndex:section];
-    UIEdgeInsets contentInsets = self.collectionView.contentInset;
+
+#if TARGET_OS_IPHONE || TARGET_OS_TV
+    JQEdgeInsets contentInsets = self.collectionView.contentInset;
+#elif TARGET_OS_MAC
+    JQEdgeInsets contentInsets = NSEdgeInsetsZero;
+#endif
+
     CGFloat collectionViewWidth = CGRectGetWidth(self.collectionView.frame);
     
-    //******************** temp origin.y ********************//
+    //******************** 竖直方向位置(origin.y)，用于竖直方向对齐方式计算 ********************//
     CGFloat tempOriginY = 0.f;
     NSArray *frameValues = [array valueForKeyPath:@"frame"];
     if (verticalAlignment == JQCollectionViewItemsVerticalAlignmentTop) {
         tempOriginY = CGFLOAT_MAX;
         for (NSValue *frameValue in frameValues) {
-            tempOriginY = MIN(tempOriginY, CGRectGetMinY(frameValue.CGRectValue));
+            tempOriginY = MIN(tempOriginY, CGRectGetMinY([frameValue jq_rectValue]));
         }
     } else if (verticalAlignment == JQCollectionViewItemsVerticalAlignmentBottom) {
         tempOriginY = CGFLOAT_MIN;
         for (NSValue *frameValue in frameValues) {
-            tempOriginY = MAX(tempOriginY, CGRectGetMaxY(frameValue.CGRectValue));
+            tempOriginY = MAX(tempOriginY, CGRectGetMaxY([frameValue jq_rectValue]));
         }
     }
     
-    //******************** start and space ********************//
+    //******************** 计算起点及间距 ********************//
     NSMutableArray *widthArray = [[NSMutableArray alloc] init];
-    for (UICollectionViewLayoutAttributes *attr in array) {
+    for (JQCollectionViewLayoutAttributes *attr in array) {
         [widthArray addObject:@(CGRectGetWidth(attr.frame))];
     }
     CGFloat totalWidth = [[widthArray valueForKeyPath:@"@sum.self"] floatValue];
@@ -181,10 +207,10 @@
             break;
     }
     
-    //******************** calculate and cache origin ********************//
+    //******************** 计算并缓存位置 ********************//
     CGFloat lastMaxX = 0.f;
     for (int i = 0; i < widthArray.count; i++) {
-        UICollectionViewLayoutAttributes *attr = array[i];
+        JQCollectionViewLayoutAttributes *attr = array[i];
         CGFloat width = [widthArray[i] floatValue];
         CGFloat originX = 0.f;
         if (isR2L) {
@@ -208,7 +234,9 @@
 
 @end
 
+
 @implementation JQCollectionViewAlignLayout
+
 
 - (void)prepareLayout {
     [super prepareLayout];
@@ -218,8 +246,8 @@
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSArray *originalAttributes = [super layoutAttributesForElementsInRect:rect];
     NSMutableArray *updatedAttributes = originalAttributes.mutableCopy;
-    for (UICollectionViewLayoutAttributes *attributes in originalAttributes) {
-        if (!attributes.representedElementKind || attributes.representedElementCategory == UICollectionElementCategoryCell) {
+    for (JQCollectionViewLayoutAttributes *attributes in originalAttributes) {
+        if (!attributes.representedElementKind || attributes.representedElementCategory == JQCollectionElementCategoryItemCell) {
             NSUInteger index = [updatedAttributes indexOfObject:attributes];
             updatedAttributes[index] = [self layoutAttributesForItemAtIndexPath:attributes.indexPath];
         }
@@ -227,9 +255,9 @@
     return updatedAttributes;
 }
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (JQCollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     // This is likely occurring because the flow layout subclass JQCollectionViewAlignLayout is modifying attributes returned by UICollectionViewFlowLayout without copying them
-    UICollectionViewLayoutAttributes *currentAttributes = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
+    JQCollectionViewLayoutAttributes *currentAttributes = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
 
     // 获取缓存的当前 indexPath 的 item origin value
     NSValue *originValue = [self jq_cachedItemOriginAtIndexPath:indexPath];
@@ -252,7 +280,7 @@
     }
     if (originValue) {
         // 设置缓存的当前 indexPath 的 item origin
-        origin = [originValue CGPointValue];
+        origin = [originValue jq_pointValue];
         CGRect currentFrame = currentAttributes.frame;
         // 获取当前 indexPath 的 item origin 后修改当前 layoutAttributes.frame.origin
         currentFrame.origin = origin;

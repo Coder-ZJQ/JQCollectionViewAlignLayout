@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D98B205E9A99D66D1ACA3AC6 /* Pods_JQCollectionViewAlignLayout_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */; };
+		F3ED7846245A5D6D00D16C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7845245A5D6D00D16C1B /* AppDelegate.m */; };
+		F3ED7849245A5D6D00D16C1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7848245A5D6D00D16C1B /* ViewController.m */; };
+		F3ED784B245A5D7000D16C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ED784A245A5D7000D16C1B /* Assets.xcassets */; };
+		F3ED784E245A5D7000D16C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ED784C245A5D7000D16C1B /* Main.storyboard */; };
+		F3ED7851245A5D7000D16C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7850245A5D7000D16C1B /* main.m */; };
+		F3ED7997245A64A800D16C1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F3ED7994245A64A800D16C1B /* LICENSE */; };
+		F3ED7998245A64A800D16C1B /* JQCollectionViewAlignLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F3ED7995245A64A800D16C1B /* JQCollectionViewAlignLayout.podspec */; };
+		F3ED7999245A64A800D16C1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F3ED7996245A64A800D16C1B /* README.md */; };
+		F3ED79B4245A6CA000D16C1B /* JQSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED79B2245A6CA000D16C1B /* JQSectionModel.m */; };
+		F3ED79B7245A6E5A00D16C1B /* CollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED79B5245A6E5A00D16C1B /* CollectionViewItem.m */; };
+		F3ED79B9245A6E7400D16C1B /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3ED79B8245A6E7400D16C1B /* CollectionViewItem.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D9B7CC13B617963E20357CA7 /* Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		F3ED7841245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JQCollectionViewAlignLayout-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3ED7844245A5D6D00D16C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F3ED7845245A5D6D00D16C1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F3ED7847245A5D6D00D16C1B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F3ED7848245A5D6D00D16C1B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F3ED784A245A5D7000D16C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3ED784D245A5D7000D16C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3ED784F245A5D7000D16C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3ED7850245A5D7000D16C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F3ED7852245A5D7000D16C1B /* JQCollectionViewAlignLayout_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JQCollectionViewAlignLayout_macOS.entitlements; sourceTree = "<group>"; };
+		F3ED7994245A64A800D16C1B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		F3ED7995245A64A800D16C1B /* JQCollectionViewAlignLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JQCollectionViewAlignLayout.podspec; path = ../../JQCollectionViewAlignLayout.podspec; sourceTree = "<group>"; };
+		F3ED7996245A64A800D16C1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		F3ED79B2245A6CA000D16C1B /* JQSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQSectionModel.m; sourceTree = "<group>"; };
+		F3ED79B3245A6CA000D16C1B /* JQSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQSectionModel.h; sourceTree = "<group>"; };
+		F3ED79B5245A6E5A00D16C1B /* CollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewItem.m; sourceTree = "<group>"; };
+		F3ED79B6245A6E5A00D16C1B /* CollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewItem.h; sourceTree = "<group>"; };
+		F3ED79B8245A6E7400D16C1B /* CollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
+		FA9DEBEAD542D9BAE6A9F19B /* Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JQCollectionViewAlignLayout_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3ED783E245A5D6D00D16C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98B205E9A99D66D1ACA3AC6 /* Pods_JQCollectionViewAlignLayout_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D1D3A8CBBDCAFA08D2491EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6996041E720A60D2B7711124 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA9DEBEAD542D9BAE6A9F19B /* Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig */,
+				D9B7CC13B617963E20357CA7 /* Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		F3ED7838245A5D6D00D16C1B = {
+			isa = PBXGroup;
+			children = (
+				F3ED7993245A649500D16C1B /* Podspec Metadata */,
+				F3ED7843245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS */,
+				F3ED7842245A5D6D00D16C1B /* Products */,
+				6996041E720A60D2B7711124 /* Pods */,
+				1D1D3A8CBBDCAFA08D2491EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F3ED7842245A5D6D00D16C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED7841245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3ED7843245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED79B6245A6E5A00D16C1B /* CollectionViewItem.h */,
+				F3ED79B5245A6E5A00D16C1B /* CollectionViewItem.m */,
+				F3ED79B8245A6E7400D16C1B /* CollectionViewItem.xib */,
+				F3ED79B3245A6CA000D16C1B /* JQSectionModel.h */,
+				F3ED79B2245A6CA000D16C1B /* JQSectionModel.m */,
+				F3ED7844245A5D6D00D16C1B /* AppDelegate.h */,
+				F3ED7845245A5D6D00D16C1B /* AppDelegate.m */,
+				F3ED7847245A5D6D00D16C1B /* ViewController.h */,
+				F3ED7848245A5D6D00D16C1B /* ViewController.m */,
+				F3ED784A245A5D7000D16C1B /* Assets.xcassets */,
+				F3ED784C245A5D7000D16C1B /* Main.storyboard */,
+				F3ED784F245A5D7000D16C1B /* Info.plist */,
+				F3ED7850245A5D7000D16C1B /* main.m */,
+				F3ED7852245A5D7000D16C1B /* JQCollectionViewAlignLayout_macOS.entitlements */,
+			);
+			path = "JQCollectionViewAlignLayout-macOS";
+			sourceTree = "<group>";
+		};
+		F3ED7993245A649500D16C1B /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED7995245A64A800D16C1B /* JQCollectionViewAlignLayout.podspec */,
+				F3ED7994245A64A800D16C1B /* LICENSE */,
+				F3ED7996245A64A800D16C1B /* README.md */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3ED7840245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3ED7855245A5D7000D16C1B /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout-macOS" */;
+			buildPhases = (
+				C1A652774A0E7E5EB6283E92 /* [CP] Check Pods Manifest.lock */,
+				F3ED783D245A5D6D00D16C1B /* Sources */,
+				F3ED783E245A5D6D00D16C1B /* Frameworks */,
+				F3ED783F245A5D6D00D16C1B /* Resources */,
+				9E34180239C5976AC2F3302C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JQCollectionViewAlignLayout-macOS";
+			productName = "JQCollectionViewAlignLayout-macOS";
+			productReference = F3ED7841245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3ED7839245A5D6D00D16C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = www.sunnada.com;
+				TargetAttributes = {
+					F3ED7840245A5D6D00D16C1B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F3ED783C245A5D6D00D16C1B /* Build configuration list for PBXProject "JQCollectionViewAlignLayout-macOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3ED7838245A5D6D00D16C1B;
+			productRefGroup = F3ED7842245A5D6D00D16C1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3ED7840245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3ED783F245A5D6D00D16C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3ED7997245A64A800D16C1B /* LICENSE in Resources */,
+				F3ED784B245A5D7000D16C1B /* Assets.xcassets in Resources */,
+				F3ED7999245A64A800D16C1B /* README.md in Resources */,
+				F3ED7998245A64A800D16C1B /* JQCollectionViewAlignLayout.podspec in Resources */,
+				F3ED784E245A5D7000D16C1B /* Main.storyboard in Resources */,
+				F3ED79B9245A6E7400D16C1B /* CollectionViewItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E34180239C5976AC2F3302C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1A652774A0E7E5EB6283E92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JQCollectionViewAlignLayout-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3ED783D245A5D6D00D16C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3ED79B4245A6CA000D16C1B /* JQSectionModel.m in Sources */,
+				F3ED7849245A5D6D00D16C1B /* ViewController.m in Sources */,
+				F3ED79B7245A6E5A00D16C1B /* CollectionViewItem.m in Sources */,
+				F3ED7851245A5D7000D16C1B /* main.m in Sources */,
+				F3ED7846245A5D6D00D16C1B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F3ED784C245A5D7000D16C1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3ED784D245A5D7000D16C1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3ED7853245A5D7000D16C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F3ED7854245A5D7000D16C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F3ED7856245A5D7000D16C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9DEBEAD542D9BAE6A9F19B /* Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 39Z8MCG9JF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "JQCollectionViewAlignLayout-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JQCollectionViewAlignLayout-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3ED7857245A5D7000D16C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9B7CC13B617963E20357CA7 /* Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 39Z8MCG9JF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "JQCollectionViewAlignLayout-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.JQCollectionViewAlignLayout-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3ED783C245A5D6D00D16C1B /* Build configuration list for PBXProject "JQCollectionViewAlignLayout-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3ED7853245A5D7000D16C1B /* Debug */,
+				F3ED7854245A5D7000D16C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3ED7855245A5D7000D16C1B /* Build configuration list for PBXNativeTarget "JQCollectionViewAlignLayout-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3ED7856245A5D7000D16C1B /* Debug */,
+				F3ED7857245A5D7000D16C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3ED7839245A5D6D00D16C1B /* Project object */;
+}

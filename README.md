@@ -1,16 +1,30 @@
 # JQCollectionViewAlignLayout
 
-
 [![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
 [![License](https://img.shields.io/cocoapods/l/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
 [![Platform](https://img.shields.io/cocoapods/p/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
 
+A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.
+
+(available for both `UICollectionView` and `NSCollectionView`)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the Examples directory first.
 
-## Alignment
+### iOS
+
+![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/eg-ios.png?raw=true)
+
+### macOS
+
+![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/eg-osx.png?raw=true)
+
+### tvOS
+
+![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/eg-tvos.png?raw=true)
+
+## Alignments and Directions
 
 |                      Horizontal                       |                          Demo Image                          |
 | :---------------------------------------------------: | :----------------------------------------------------------: |
@@ -33,6 +47,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 iOS 6.0 +
+
+macOS 10.11 +
+
+tvOS 9.0 +
+
 ## Installation
 
 JQCollectionViewAlignLayout is available through [CocoaPods](http://cocoapods.org). To install
@@ -44,21 +63,27 @@ pod 'JQCollectionViewAlignLayout'
 
 ## Usage
 
-**Init the collectionView with `JQCollectionViewAlignLayout`:**
+1. **Init the collectionView with `JQCollectionViewAlignLayout`:**
 
-- Code:
+- by code:
 
 ``` objective-c
+// UICollectionView
 JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
 UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+
+// NSCollectionView
+JQCollectionViewAlignLayout *layout = [[JQCollectionViewAlignLayout alloc] init];
+NSCollectionView *collectionView = ...;
+collectionView.layout = layout;
 ```
-- Interface Builder:
+- or setup in the Interface Builder:
 
 ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/ib-setup.png?raw=true)
 
-**Set the alignment and direction:**
+2. **Setup the alignment and direction:**
 
-- Property:
+- Property(for all sections):
 
 ```objective-c
 layout.itemsHorizontalAlignment = JQCollectionViewItemsHorizontalAlignmentLeft;
@@ -66,10 +91,9 @@ layout.itemsVerticalAlignment = JQCollectionViewItemsVerticalAlignmentCenter;
 layout.itemsDirection = JQCollectionViewItemsDirectionLTR;
 ```
 
-- Protocol:
+- Protocol(for each section):
 
 ```objective-c
-// (if you want set different alignment and direction each section, you can do like this.)
 // 1. conforms to protocol JQCollectionViewAlignLayoutDelegate
 @interface JQViewController () < UICollectionViewDataSource, JQCollectionViewAlignLayoutDelegate>
 
@@ -92,7 +116,7 @@ layout.itemsDirection = JQCollectionViewItemsDirectionLTR;
 @end
 ```
 
-**The rest is same as `UICollectionViewFlowLayout`.**
+**The others are same as `UICollectionViewFlowLayout/NSCollectionViewFlowLayout`.**
 
 ## Author
 

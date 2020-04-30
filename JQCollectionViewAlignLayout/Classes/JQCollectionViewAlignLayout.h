@@ -6,7 +6,33 @@
 //  Copyright © 2017年 Joker. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#if TARGET_OS_IPHONE || TARGET_OS_TV
+
+    #import <UIKit/UIKit.h>
+
+    #define JQCollectionViewDelegateFlowLayout UICollectionViewDelegateFlowLayout
+    #define JQCollectionElementCategoryItemCell UICollectionElementCategoryCell
+    #define JQCollectionView UICollectionView
+    typedef UICollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
+    typedef UIEdgeInsets JQEdgeInsets;
+    typedef UICollectionViewScrollDirection JQCollectionViewScrollDirection;
+    typedef UICollectionViewFlowLayout JQCollectionViewFlowLayout;
+
+#elif TARGET_OS_MAC
+
+    #import <AppKit/AppKit.h>
+
+    #define JQCollectionViewDelegateFlowLayout NSCollectionViewDelegateFlowLayout
+    #define JQCollectionElementCategoryItemCell NSCollectionElementCategoryItem
+    #define JQCollectionView NSCollectionView
+    typedef NSCollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
+    typedef NSEdgeInsets JQEdgeInsets;
+    typedef NSCollectionViewScrollDirection JQCollectionViewScrollDirection;
+    typedef NSCollectionViewFlowLayout JQCollectionViewFlowLayout;
+
+#endif
 
 typedef NS_ENUM(NSInteger, JQCollectionViewItemsHorizontalAlignment) {
     JQCollectionViewItemsHorizontalAlignmentFlow,   /**< 水平流式(水平方向效果与 UICollectionViewDelegateFlowLayout 一致) */
@@ -28,51 +54,53 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemsDirection) {
 
 @class JQCollectionViewAlignLayout;
 
-/// 扩展 UICollectionViewDelegateFlowLayout 协议，添加设置水平竖直对齐方式及 items 排布方向协议方法
-@protocol JQCollectionViewAlignLayoutDelegate <UICollectionViewDelegateFlowLayout>
+/// 扩展 UICollectionViewDelegateFlowLayout/NSCollectionViewDelegateFlowLayout 协议，
+/// 添加设置水平、竖直方向的对齐方式以及 items 排布方向协议方法
+@protocol JQCollectionViewAlignLayoutDelegate <JQCollectionViewDelegateFlowLayout>
 
 @optional
 
 /// 设置不同 section items 水平方向的对齐方式
-/// @param collectionView UICollectionView 对象
+/// @param collectionView UICollectionView/NSCollectionView 对象
 /// @param layout 布局对象
 /// @param section section
-- (JQCollectionViewItemsHorizontalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsHorizontalAlignmentInSection:(NSInteger)section;
+- (JQCollectionViewItemsHorizontalAlignment)collectionView:(JQCollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsHorizontalAlignmentInSection:(NSInteger)section;
 
 /// 设置不同 section items 竖直方向的对齐方式
-/// @param collectionView UICollectionView 对象
+/// @param collectionView UICollectionView/NSCollectionView 对象
 /// @param layout 布局对象
 /// @param section section
-- (JQCollectionViewItemsVerticalAlignment)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsVerticalAlignmentInSection:(NSInteger)section;
+- (JQCollectionViewItemsVerticalAlignment)collectionView:(JQCollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsVerticalAlignmentInSection:(NSInteger)section;
 
 /// 设置不同 section items 的排布方向
-/// @param collectionView UICollectionView 对象
+/// @param collectionView UICollectionView/NSCollectionView 对象
 /// @param layout 布局对象
 /// @param section section
-- (JQCollectionViewItemsDirection)collectionView:(UICollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsDirectionInSection:(NSInteger)section;
+- (JQCollectionViewItemsDirection)collectionView:(JQCollectionView *)collectionView layout:(JQCollectionViewAlignLayout *)layout itemsDirectionInSection:(NSInteger)section;
 
 @end
 
-/// 在 UICollectionViewFlowLayout 基础上，自定义 UICollectionView 对齐布局
+/// 在 UICollectionViewFlowLayout/NSCollectionViewFlowLayout 基础上，
+/// 自定义 UICollectionView/NSCollectionView 对齐布局
 ///
 /// 实现以下功能：
 /// 1. 设置水平方向对齐方式：流式（默认）、居左、居中、居右、平铺；
 /// 2. 设置竖直方向对齐方式：居中（默认）、置顶、置底；
 /// 3. 设置显示条目排布方向：从左到右（默认）、从右到左。
-@interface JQCollectionViewAlignLayout : UICollectionViewFlowLayout
+@interface JQCollectionViewAlignLayout : JQCollectionViewFlowLayout
 
-/// 水平方向对齐方式，默认为流式 JQCollectionViewItemsHorizontalAlignmentFlow
+/// 水平方向对齐方式，默认为流式(JQCollectionViewItemsHorizontalAlignmentFlow)
 @property (nonatomic) JQCollectionViewItemsHorizontalAlignment itemsHorizontalAlignment;
-/// 竖直方向对齐方式，默认为居中 JQCollectionViewItemsVerticalAlignmentCenter
+/// 竖直方向对齐方式，默认为居中(JQCollectionViewItemsVerticalAlignmentCenter)
 @property (nonatomic) JQCollectionViewItemsVerticalAlignment itemsVerticalAlignment;
-/// items 排布方向，默认为从左到右 JQCollectionViewItemsDirectionLTR
+/// items 排布方向，默认为从左到右(JQCollectionViewItemsDirectionLTR)
 @property (nonatomic) JQCollectionViewItemsDirection itemsDirection;
 
 @end
 
 @interface JQCollectionViewAlignLayout (unavailable)
 
-// 禁用 setScrollDirection: 方法，不可设置滚动方向，默认为竖直滚动 UICollectionViewScrollDirectionVertical
-- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection NS_UNAVAILABLE;
+// 禁用 setScrollDirection: 方法，不可设置滚动方向，默认为竖直滚动
+- (void)setScrollDirection:(JQCollectionViewScrollDirection)scrollDirection NS_UNAVAILABLE;
 
 @end
