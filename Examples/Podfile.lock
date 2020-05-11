@@ -1,5 +1,5 @@
 PODS:
-  - JQCollectionViewAlignLayout (0.2.0)
+  - JQCollectionViewAlignLayout (0.2.1)
 
 DEPENDENCIES:
   - JQCollectionViewAlignLayout (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JQCollectionViewAlignLayout: 873da756d3a58f99f236037b19910b76022627d6
+  JQCollectionViewAlignLayout: e026e9bbaf872b3c8003ff3f646f0d9f90f81d2b
 
 PODFILE CHECKSUM: 63dc505278161c6d35573a58759e38041023d52b
 

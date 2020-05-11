@@ -98,10 +98,10 @@ static NSString *const kFooterReuseIdentifier = @"kFooterReuseIdentifier";
     if (!_data) {
         NSMutableArray *data = [[NSMutableArray alloc] init];
         JQCollectionViewItemsVerticalAlignment verticalAlignments[] = {JQCollectionViewItemsVerticalAlignmentCenter, JQCollectionViewItemsVerticalAlignmentTop, JQCollectionViewItemsVerticalAlignmentBottom};
-        JQCollectionViewItemsHorizontalAlignment horizontalAlignments[] = {JQCollectionViewItemsHorizontalAlignmentCenter, JQCollectionViewItemsHorizontalAlignmentLeft, JQCollectionViewItemsHorizontalAlignmentRight, JQCollectionViewItemsHorizontalAlignmentFlow};
+        JQCollectionViewItemsHorizontalAlignment horizontalAlignments[] = {JQCollectionViewItemsHorizontalAlignmentCenter, JQCollectionViewItemsHorizontalAlignmentLeft, JQCollectionViewItemsHorizontalAlignmentRight, JQCollectionViewItemsHorizontalAlignmentFlow, JQCollectionViewItemsHorizontalAlignmentFlowFilled};
         for (int i = 0; i < 3; i++) {
             JQCollectionViewItemsVerticalAlignment vertical = verticalAlignments[i];
-            for (int j = 0; j < 4; j++) {
+            for (int j = 0; j < 5; j++) {
                 JQCollectionViewItemsHorizontalAlignment horizontal = horizontalAlignments[j];
                 int count = 40;
                 NSMutableArray *items = [[NSMutableArray alloc] init];

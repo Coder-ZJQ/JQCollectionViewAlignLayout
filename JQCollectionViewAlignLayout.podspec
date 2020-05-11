@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JQCollectionViewAlignLayout'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.'
 
 # This description is used to generate tags and improve search results.
@@ -37,9 +37,9 @@ A custom layout object based on flow layout, that supports setting horizontal, v
   s.tvos.frameworks = 'Foundation', 'UIKit'
   s.osx.frameworks = 'Foundation', 'AppKit'
 
-  s.ios.deployment_target = '6.0' # minimum SDK with autolayout
-  s.osx.deployment_target = '10.11' # minimum SDK with autolayout
-  s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
+  s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.11'
+  s.tvos.deployment_target = '9.0'
   s.requires_arc = true
   
 end
