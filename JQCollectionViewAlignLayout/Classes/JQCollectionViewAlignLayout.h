@@ -10,27 +10,27 @@
 
 #if TARGET_OS_IPHONE || TARGET_OS_TV
 
-    #import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 
-    #define JQCollectionViewDelegateFlowLayout UICollectionViewDelegateFlowLayout
-    #define JQCollectionElementCategoryItemCell UICollectionElementCategoryCell
-    #define JQCollectionView UICollectionView
-    typedef UICollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
-    typedef UIEdgeInsets JQEdgeInsets;
-    typedef UICollectionViewScrollDirection JQCollectionViewScrollDirection;
-    typedef UICollectionViewFlowLayout JQCollectionViewFlowLayout;
+#define JQCollectionViewDelegateFlowLayout UICollectionViewDelegateFlowLayout
+#define JQCollectionElementCategoryItemCell UICollectionElementCategoryCell
+#define JQCollectionView UICollectionView
+typedef UICollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
+typedef UIEdgeInsets JQEdgeInsets;
+typedef UICollectionViewScrollDirection JQCollectionViewScrollDirection;
+typedef UICollectionViewFlowLayout JQCollectionViewFlowLayout;
 
 #elif TARGET_OS_MAC
 
-    #import <AppKit/AppKit.h>
+#import <AppKit/AppKit.h>
 
-    #define JQCollectionViewDelegateFlowLayout NSCollectionViewDelegateFlowLayout
-    #define JQCollectionElementCategoryItemCell NSCollectionElementCategoryItem
-    #define JQCollectionView NSCollectionView
-    typedef NSCollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
-    typedef NSEdgeInsets JQEdgeInsets;
-    typedef NSCollectionViewScrollDirection JQCollectionViewScrollDirection;
-    typedef NSCollectionViewFlowLayout JQCollectionViewFlowLayout;
+#define JQCollectionViewDelegateFlowLayout NSCollectionViewDelegateFlowLayout
+#define JQCollectionElementCategoryItemCell NSCollectionElementCategoryItem
+#define JQCollectionView NSCollectionView
+typedef NSCollectionViewLayoutAttributes JQCollectionViewLayoutAttributes;
+typedef NSEdgeInsets JQEdgeInsets;
+typedef NSCollectionViewScrollDirection JQCollectionViewScrollDirection;
+typedef NSCollectionViewFlowLayout JQCollectionViewFlowLayout;
 
 #endif
 
@@ -43,14 +43,14 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemsHorizontalAlignment) {
 };
 
 typedef NS_ENUM(NSInteger, JQCollectionViewItemsVerticalAlignment) {
-    JQCollectionViewItemsVerticalAlignmentCenter,   /**< 竖直方向居中 */
-    JQCollectionViewItemsVerticalAlignmentTop,      /**< 竖直方向顶部对齐 */
-    JQCollectionViewItemsVerticalAlignmentBottom    /**< 竖直方向底部对齐 */
+    JQCollectionViewItemsVerticalAlignmentCenter, /**< 竖直方向居中 */
+    JQCollectionViewItemsVerticalAlignmentTop,    /**< 竖直方向顶部对齐 */
+    JQCollectionViewItemsVerticalAlignmentBottom  /**< 竖直方向底部对齐 */
 };
 
 typedef NS_ENUM(NSInteger, JQCollectionViewItemsDirection) {
-    JQCollectionViewItemsDirectionLTR,              /**< 排布方向从左到右 */
-    JQCollectionViewItemsDirectionRTL               /**< 排布方向从右到左 */
+    JQCollectionViewItemsDirectionLTR, /**< 排布方向从左到右 */
+    JQCollectionViewItemsDirectionRTL  /**< 排布方向从右到左 */
 };
 
 @class JQCollectionViewAlignLayout;

@@ -118,14 +118,6 @@
 #endif
 }
 
-- (CGPoint)jq_pointValue {
-#if TARGET_OS_IPHONE || TARGET_OS_TV
-    return self.CGPointValue;
-#elif TARGET_OS_MAC
-    return self.pointValue;
-#endif
-}
-
 @end
 
 @implementation JQCollectionViewAlignLayout (alignment)
@@ -161,7 +153,7 @@
     CGFloat totalWidth = [[widthArray valueForKeyPath:@"@sum.self"] floatValue];
     NSInteger totalCount = array.count;
     CGFloat extra = collectionViewWidth - totalWidth - contentInsets.left - contentInsets.right - sectionInsets.left - sectionInsets.right - minimumInteritemSpacing * (totalCount - 1);
-    
+
     //******************** 竖直方向位置(origin.y)，用于竖直方向对齐方式计算 ********************//
     CGFloat tempOriginY = 0.f;
     NSArray *frameValues = [array valueForKeyPath:@"frame"];
@@ -176,7 +168,7 @@
             tempOriginY = MAX(tempOriginY, CGRectGetMaxY([frameValue jq_rectValue]));
         }
     }
-    
+
     //******************** 计算起点及间距 ********************//
     CGFloat start = 0.f, space = 0.f;
     switch (horizontalAlignment) {
@@ -210,7 +202,7 @@
         default:
             break;
     }
-    
+
     //******************** 计算并缓存 frame ********************//
     CGFloat lastMaxX = 0.f;
     for (int i = 0; i < widthArray.count; i++) {
@@ -244,9 +236,7 @@
 
 @end
 
-
 @implementation JQCollectionViewAlignLayout
-
 
 - (void)prepareLayout {
     [super prepareLayout];
