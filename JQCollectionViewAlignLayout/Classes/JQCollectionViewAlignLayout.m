@@ -217,7 +217,7 @@
         CGRect frame = array[i].frame;
         CGFloat width = [widthArray[i] floatValue];
         if (horizontalAlignment == JQCollectionViewItemsHorizontalAlignmentFlowFilled) {
-            width += extra / widthArray.count;
+            width += extra / (totalWidth / width);
         }
         CGFloat originX = 0.f;
         if (isR2L) {
