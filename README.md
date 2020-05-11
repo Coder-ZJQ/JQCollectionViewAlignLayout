@@ -32,6 +32,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 |     JQCollectionViewItemsHorizontalAlignmentLeft      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-left.png?raw=true) |
 |    JQCollectionViewItemsHorizontalAlignmentCenter     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-center.png?raw=true) |
 |     JQCollectionViewItemsHorizontalAlignmentRight     | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-right.png?raw=true) |
+|  JQCollectionViewItemsHorizontalAlignmentFlowFilled   | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/h-flowfilled.png?raw=true) |
 
 |                       Vertical                        |                          Demo Image                          |
 | :---------------------------------------------------: | :----------------------------------------------------------: |

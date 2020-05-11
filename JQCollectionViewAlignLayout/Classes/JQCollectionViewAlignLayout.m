@@ -10,7 +10,7 @@
 
 @interface JQCollectionViewAlignLayout ()
 
-@property (nonatomic, strong) NSMutableDictionary *cachedOrigin;
+@property (nonatomic, strong) NSMutableDictionary *cachedFrame;
 
 @end
 
@@ -130,15 +130,15 @@
 
 @implementation JQCollectionViewAlignLayout (alignment)
 
-- (void)jq_cacheTheItemOrigin:(CGPoint)origin forIndexPath:(NSIndexPath *)indexPath {
-    self.cachedOrigin[indexPath] = @(origin);
+- (void)jq_cacheTheItemFrame:(CGRect)frame forIndexPath:(NSIndexPath *)indexPath {
+    self.cachedFrame[indexPath] = @(frame);
 }
 
-- (NSValue *)jq_cachedItemOriginAtIndexPath:(NSIndexPath *)indexPath {
-    return self.cachedOrigin[indexPath];
+- (NSValue *)jq_cachedItemFrameAtIndexPath:(NSIndexPath *)indexPath {
+    return self.cachedFrame[indexPath];
 }
 
-- (void)jq_calculateAndCacheOriginForItemAttributesArray:(NSArray<JQCollectionViewLayoutAttributes *> *)array {
+- (void)jq_calculateAndCacheFrameForItemAttributesArray:(NSArray<JQCollectionViewLayoutAttributes *> *)array {
     NSInteger section = [array firstObject].indexPath.section;
 
     //******************** 相关布局属性 ********************//
@@ -148,14 +148,19 @@
     BOOL isR2L = direction == JQCollectionViewItemsDirectionRTL;
     JQEdgeInsets sectionInsets = [self jq_insetForSectionAtIndex:section];
     CGFloat minimumInteritemSpacing = [self jq_minimumInteritemSpacingForSectionAtIndex:section];
-
 #if TARGET_OS_IPHONE || TARGET_OS_TV
     JQEdgeInsets contentInsets = self.collectionView.contentInset;
 #elif TARGET_OS_MAC
     JQEdgeInsets contentInsets = NSEdgeInsetsZero;
 #endif
-
     CGFloat collectionViewWidth = CGRectGetWidth(self.collectionView.frame);
+    NSMutableArray *widthArray = [[NSMutableArray alloc] init];
+    for (JQCollectionViewLayoutAttributes *attr in array) {
+        [widthArray addObject:@(CGRectGetWidth(attr.frame))];
+    }
+    CGFloat totalWidth = [[widthArray valueForKeyPath:@"@sum.self"] floatValue];
+    NSInteger totalCount = array.count;
+    CGFloat extra = collectionViewWidth - totalWidth - contentInsets.left - contentInsets.right - sectionInsets.left - sectionInsets.right - minimumInteritemSpacing * (totalCount - 1);
     
     //******************** 竖直方向位置(origin.y)，用于竖直方向对齐方式计算 ********************//
     CGFloat tempOriginY = 0.f;
@@ -173,13 +178,7 @@
     }
     
     //******************** 计算起点及间距 ********************//
-    NSMutableArray *widthArray = [[NSMutableArray alloc] init];
-    for (JQCollectionViewLayoutAttributes *attr in array) {
-        [widthArray addObject:@(CGRectGetWidth(attr.frame))];
-    }
-    CGFloat totalWidth = [[widthArray valueForKeyPath:@"@sum.self"] floatValue];
     CGFloat start = 0.f, space = 0.f;
-    NSInteger totalCount = array.count;
     switch (horizontalAlignment) {
         case JQCollectionViewItemsHorizontalAlignmentLeft: {
             start = isR2L ? (collectionViewWidth - totalWidth - contentInsets.left - contentInsets.right - sectionInsets.left - minimumInteritemSpacing * (totalCount - 1)) : sectionInsets.left;
@@ -187,7 +186,7 @@
         } break;
 
         case JQCollectionViewItemsHorizontalAlignmentCenter: {
-            CGFloat rest = (collectionViewWidth - totalWidth - contentInsets.left - contentInsets.right - sectionInsets.left - sectionInsets.right - minimumInteritemSpacing * (totalCount - 1)) / 2.f;
+            CGFloat rest = extra / 2.f;
             start = isR2L ? sectionInsets.right + rest : sectionInsets.left + rest;
             space = minimumInteritemSpacing;
         } break;
@@ -203,15 +202,23 @@
             space = isEnd ? minimumInteritemSpacing : (collectionViewWidth - totalWidth - contentInsets.left - contentInsets.right - sectionInsets.left - sectionInsets.right) / (totalCount - 1);
         } break;
 
+        case JQCollectionViewItemsHorizontalAlignmentFlowFilled: {
+            start = isR2L ? sectionInsets.right : sectionInsets.left;
+            space = minimumInteritemSpacing;
+        } break;
+
         default:
             break;
     }
     
-    //******************** 计算并缓存位置 ********************//
+    //******************** 计算并缓存 frame ********************//
     CGFloat lastMaxX = 0.f;
     for (int i = 0; i < widthArray.count; i++) {
-        JQCollectionViewLayoutAttributes *attr = array[i];
+        CGRect frame = array[i].frame;
         CGFloat width = [widthArray[i] floatValue];
+        if (horizontalAlignment == JQCollectionViewItemsHorizontalAlignmentFlowFilled) {
+            width += extra / widthArray.count;
+        }
         CGFloat originX = 0.f;
         if (isR2L) {
             originX = i == 0 ? collectionViewWidth - start - contentInsets.right - contentInsets.left - width : lastMaxX - space - width;
@@ -222,13 +229,16 @@
         }
         CGFloat originY;
         if (verticalAlignment == JQCollectionViewItemsVerticalAlignmentBottom) {
-            originY = tempOriginY - CGRectGetHeight(attr.frame);
+            originY = tempOriginY - CGRectGetHeight(frame);
         } else if (verticalAlignment == JQCollectionViewItemsVerticalAlignmentCenter) {
-            originY = attr.frame.origin.y;
+            originY = frame.origin.y;
         } else {
             originY = tempOriginY;
         }
-        [self jq_cacheTheItemOrigin:CGPointMake(originX, originY) forIndexPath:attr.indexPath];
+        frame.origin.x = originX;
+        frame.origin.y = originY;
+        frame.size.width = width;
+        [self jq_cacheTheItemFrame:frame forIndexPath:array[i].indexPath];
     }
 }
 
@@ -240,7 +250,7 @@
 
 - (void)prepareLayout {
     [super prepareLayout];
-    self.cachedOrigin = @{}.mutableCopy;
+    self.cachedFrame = @{}.mutableCopy;
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
@@ -259,11 +269,10 @@
     // This is likely occurring because the flow layout subclass JQCollectionViewAlignLayout is modifying attributes returned by UICollectionViewFlowLayout without copying them
     JQCollectionViewLayoutAttributes *currentAttributes = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
 
-    // 获取缓存的当前 indexPath 的 item origin value
-    NSValue *originValue = [self jq_cachedItemOriginAtIndexPath:indexPath];
-    CGPoint origin;
-    // 如果没有缓存的 item origin value，则计算并缓存然后获取
-    if (!originValue) {
+    // 获取缓存的当前 indexPath 的 item frame value
+    NSValue *frameValue = [self jq_cachedItemFrameAtIndexPath:indexPath];
+    // 如果没有缓存的 item frame value，则计算并缓存然后获取
+    if (!frameValue) {
         // 判断是否为一行中的首个
         BOOL isLineStart = [self jq_isLineStartAtIndexPath:indexPath];
         // 如果是一行中的首个
@@ -271,20 +280,18 @@
             // 获取当前行的所有 UICollectionViewLayoutAttributes
             NSArray *line = [self jq_lineAttributesArrayWithStartAttributes:currentAttributes];
             if (line.count) {
-                // 计算并缓存当前行的所有 UICollectionViewLayoutAttributes origin
-                [self jq_calculateAndCacheOriginForItemAttributesArray:line];
+                // 计算并缓存当前行的所有 UICollectionViewLayoutAttributes frame
+                [self jq_calculateAndCacheFrameForItemAttributesArray:line];
             }
         }
-        // 获取位于当前 indexPath 的 item origin
-        originValue = [self jq_cachedItemOriginAtIndexPath:indexPath];
+        // 获取位于当前 indexPath 的 item frame
+        frameValue = [self jq_cachedItemFrameAtIndexPath:indexPath];
     }
-    if (originValue) {
-        // 设置缓存的当前 indexPath 的 item origin
-        origin = [originValue jq_pointValue];
-        CGRect currentFrame = currentAttributes.frame;
-        // 获取当前 indexPath 的 item origin 后修改当前 layoutAttributes.frame.origin
-        currentFrame.origin = origin;
-        currentAttributes.frame = currentFrame;
+    if (frameValue) {
+        // 设置缓存的当前 indexPath 的 item frame
+        CGRect frame = [frameValue jq_rectValue];
+        // 获取当前 indexPath 的 item frame 后修改当前 layoutAttributes.frame
+        currentAttributes.frame = frame;
     }
     
     return currentAttributes;

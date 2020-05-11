@@ -35,6 +35,8 @@
             [desc appendString:@"right"];
         } else if (self.horizontalAlignment == JQCollectionViewItemsHorizontalAlignmentCenter) {
             [desc appendString:@"center"];
+        } else if (self.horizontalAlignment == JQCollectionViewItemsHorizontalAlignmentFlowFilled) {
+            [desc appendString:@"flow filled"];
         }
         [desc appendString:@"\nvertical: "];
         if (self.verticalAlignment == JQCollectionViewItemsVerticalAlignmentCenter) {

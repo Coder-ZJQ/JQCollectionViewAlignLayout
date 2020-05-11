@@ -101,9 +101,9 @@ static NSString *const kFooterReuseIdentifier = @"kFooterReuseIdentifier";
     if (!_data) {
         NSMutableArray *data = [[NSMutableArray alloc] init];
         JQCollectionViewItemsVerticalAlignment verticalAlignments[] = {JQCollectionViewItemsVerticalAlignmentCenter, JQCollectionViewItemsVerticalAlignmentTop, JQCollectionViewItemsVerticalAlignmentBottom};
-        JQCollectionViewItemsHorizontalAlignment horizontalAlignments[] = {JQCollectionViewItemsHorizontalAlignmentCenter, JQCollectionViewItemsHorizontalAlignmentLeft, JQCollectionViewItemsHorizontalAlignmentRight, JQCollectionViewItemsHorizontalAlignmentFlow};
+        JQCollectionViewItemsHorizontalAlignment horizontalAlignments[] = {JQCollectionViewItemsHorizontalAlignmentCenter, JQCollectionViewItemsHorizontalAlignmentLeft, JQCollectionViewItemsHorizontalAlignmentRight, JQCollectionViewItemsHorizontalAlignmentFlow, JQCollectionViewItemsHorizontalAlignmentFlowFilled};
         JQCollectionViewItemsDirection directions[] = {JQCollectionViewItemsDirectionLTR, JQCollectionViewItemsDirectionRTL};
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             JQCollectionViewItemsHorizontalAlignment horizontal = horizontalAlignments[i];
             for (int j = 0; j < 3; j++) {
                 JQCollectionViewItemsVerticalAlignment vertical = verticalAlignments[j];

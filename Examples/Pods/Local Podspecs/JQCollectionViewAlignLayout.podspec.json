@@ -1,8 +1,8 @@
 {
   "name": "JQCollectionViewAlignLayout",
   "version": "0.2.0",
-  "summary": "A collection view layout that supports setting horizontal, vertical alignment and RTL direction.",
-  "description": "A collection view layout that supports setting horizontal, vertical alignment and RTL direction.\n(available for both UICollectionView and NSCollectionView)",
+  "summary": "A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.",
+  "description": "A custom layout object based on flow layout, that supports setting horizontal, vertical alignment and RTL(right to left) direction of collection view items.\n(available for both UICollectionView and NSCollectionView)",
   "homepage": "https://github.com/coder-zjq/JQCollectionViewAlignLayout",
   "screenshots": [
     "https://raw.githubusercontent.com/Coder-ZJQ/JQCollectionViewAlignLayout/master/images/h-left.png",

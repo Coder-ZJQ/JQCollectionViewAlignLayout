@@ -35,10 +35,11 @@
 #endif
 
 typedef NS_ENUM(NSInteger, JQCollectionViewItemsHorizontalAlignment) {
-    JQCollectionViewItemsHorizontalAlignmentFlow,   /**< 水平流式(水平方向效果与 UICollectionViewDelegateFlowLayout 一致) */
-    JQCollectionViewItemsHorizontalAlignmentLeft,   /**< 水平居左 */
-    JQCollectionViewItemsHorizontalAlignmentCenter, /**< 水平居中 */
-    JQCollectionViewItemsHorizontalAlignmentRight   /**< 水平居右 */
+    JQCollectionViewItemsHorizontalAlignmentFlow,       /**< 水平流式（水平方向效果与 UICollectionViewDelegateFlowLayout 一致） */
+    JQCollectionViewItemsHorizontalAlignmentFlowFilled, /**< 水平流式并充满（行内各 item 均分行内剩余空间，使行内充满显示） */
+    JQCollectionViewItemsHorizontalAlignmentLeft,       /**< 水平居左 */
+    JQCollectionViewItemsHorizontalAlignmentCenter,     /**< 水平居中 */
+    JQCollectionViewItemsHorizontalAlignmentRight       /**< 水平居右 */
 };
 
 typedef NS_ENUM(NSInteger, JQCollectionViewItemsVerticalAlignment) {
@@ -84,7 +85,7 @@ typedef NS_ENUM(NSInteger, JQCollectionViewItemsDirection) {
 /// 自定义 UICollectionView/NSCollectionView 对齐布局
 ///
 /// 实现以下功能：
-/// 1. 设置水平方向对齐方式：流式（默认）、居左、居中、居右、平铺；
+/// 1. 设置水平方向对齐方式：流式（默认）、流式填充、居左、居中、居右、平铺；
 /// 2. 设置竖直方向对齐方式：居中（默认）、置顶、置底；
 /// 3. 设置显示条目排布方向：从左到右（默认）、从右到左。
 @interface JQCollectionViewAlignLayout : JQCollectionViewFlowLayout

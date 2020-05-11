@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38C3A7C981B9B012C8F752DB /* Pods_JQCollectionViewAlignLayout_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FC6621B7991161A4B79254 /* Pods_JQCollectionViewAlignLayout_tvOS.framework */; };
+		5DABE9507303D76881DC2107 /* libPods-JQCollectionViewAlignLayout-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B72022ECB8E8EB1E35DA35AB /* libPods-JQCollectionViewAlignLayout-tvOS.a */; };
 		F3ED7866245A5F0F00D16C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7865245A5F0F00D16C1B /* AppDelegate.m */; };
 		F3ED7869245A5F0F00D16C1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7868245A5F0F00D16C1B /* ViewController.m */; };
 		F3ED786C245A5F0F00D16C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ED786A245A5F0F00D16C1B /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		35E71304BE5937C4DC56ACD0 /* Pods-JQCollectionViewAlignLayout-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-tvOS.release.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-tvOS/Pods-JQCollectionViewAlignLayout-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		709918B6DBDC0BF23EE38982 /* Pods-JQCollectionViewAlignLayout-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-tvOS/Pods-JQCollectionViewAlignLayout-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B6FC6621B7991161A4B79254 /* Pods_JQCollectionViewAlignLayout_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JQCollectionViewAlignLayout_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B72022ECB8E8EB1E35DA35AB /* libPods-JQCollectionViewAlignLayout-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JQCollectionViewAlignLayout-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ED7861245A5F0F00D16C1B /* JQCollectionViewAlignLayout-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JQCollectionViewAlignLayout-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ED7864245A5F0F00D16C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3ED7865245A5F0F00D16C1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C3A7C981B9B012C8F752DB /* Pods_JQCollectionViewAlignLayout_tvOS.framework in Frameworks */,
+				5DABE9507303D76881DC2107 /* libPods-JQCollectionViewAlignLayout-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 		8BC82CB018AFD30F571557DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B6FC6621B7991161A4B79254 /* Pods_JQCollectionViewAlignLayout_tvOS.framework */,
+				B72022ECB8E8EB1E35DA35AB /* libPods-JQCollectionViewAlignLayout-tvOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,7 +139,6 @@
 				F3ED785D245A5F0F00D16C1B /* Sources */,
 				F3ED785E245A5F0F00D16C1B /* Frameworks */,
 				F3ED785F245A5F0F00D16C1B /* Resources */,
-				5F7436CA63CEAEA8893A5688 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,23 +198,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5F7436CA63CEAEA8893A5688 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-tvOS/Pods-JQCollectionViewAlignLayout-tvOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-tvOS/Pods-JQCollectionViewAlignLayout-tvOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-tvOS/Pods-JQCollectionViewAlignLayout-tvOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DAFB0EC1CCC0584B4B15A943 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

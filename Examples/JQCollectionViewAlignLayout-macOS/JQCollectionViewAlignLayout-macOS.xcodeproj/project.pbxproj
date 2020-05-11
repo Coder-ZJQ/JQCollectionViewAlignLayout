@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D98B205E9A99D66D1ACA3AC6 /* Pods_JQCollectionViewAlignLayout_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */; };
+		9F342709D5F26614C2E9B429 /* libPods-JQCollectionViewAlignLayout-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A96CFBCDFA6A606F742ED6A /* libPods-JQCollectionViewAlignLayout-macOS.a */; };
 		F3ED7846245A5D6D00D16C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7845245A5D6D00D16C1B /* AppDelegate.m */; };
 		F3ED7849245A5D6D00D16C1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED7848245A5D6D00D16C1B /* ViewController.m */; };
 		F3ED784B245A5D7000D16C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ED784A245A5D7000D16C1B /* Assets.xcassets */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A96CFBCDFA6A606F742ED6A /* libPods-JQCollectionViewAlignLayout-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JQCollectionViewAlignLayout-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B7CC13B617963E20357CA7 /* Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		F3ED7841245A5D6D00D16C1B /* JQCollectionViewAlignLayout-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JQCollectionViewAlignLayout-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ED7844245A5D6D00D16C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		F3ED79B6245A6E5A00D16C1B /* CollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewItem.h; sourceTree = "<group>"; };
 		F3ED79B8245A6E7400D16C1B /* CollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
 		FA9DEBEAD542D9BAE6A9F19B /* Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig"; path = "Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JQCollectionViewAlignLayout_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98B205E9A99D66D1ACA3AC6 /* Pods_JQCollectionViewAlignLayout_macOS.framework in Frameworks */,
+				9F342709D5F26614C2E9B429 /* libPods-JQCollectionViewAlignLayout-macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		1D1D3A8CBBDCAFA08D2491EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC5DA62B62786058713A2F09 /* Pods_JQCollectionViewAlignLayout_macOS.framework */,
+				5A96CFBCDFA6A606F742ED6A /* libPods-JQCollectionViewAlignLayout-macOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,7 +136,6 @@
 				F3ED783D245A5D6D00D16C1B /* Sources */,
 				F3ED783E245A5D6D00D16C1B /* Frameworks */,
 				F3ED783F245A5D6D00D16C1B /* Resources */,
-				9E34180239C5976AC2F3302C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,23 +195,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9E34180239C5976AC2F3302C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JQCollectionViewAlignLayout-macOS/Pods-JQCollectionViewAlignLayout-macOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C1A652774A0E7E5EB6283E92 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
