@@ -1,3 +1,5 @@
+English | [中文说明](./README-ZH.md)
+
 # JQCollectionViewAlignLayout
 
 [![Version](https://img.shields.io/cocoapods/v/JQCollectionViewAlignLayout.svg?style=flat)](http://cocoapods.org/pods/JQCollectionViewAlignLayout)
@@ -8,9 +10,13 @@ A custom layout object based on flow layout, that supports setting horizontal, v
 
 (available for both `UICollectionView` and `NSCollectionView`)
 
+
+
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Examples directory first.
+To run the example project, clone the repo, and run `pod install` from the Examples directory first. Then open `JQCollectionViewAlignLayout.xcworkspace` with Xcode and choose a scheme below:
+
+![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/schemes.png?raw=true)
 
 ### iOS
 
@@ -23,6 +29,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### tvOS
 
 ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/eg-tvos.png?raw=true)
+
+
 
 ## Alignments and Directions
 
@@ -45,6 +53,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 | JQCollectionViewItemsDirectionLTR(default) | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/d-ltr.png?raw=true) |
 |     JQCollectionViewItemsDirectionRTL      | ![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/d-rtl.png?raw=true) |
 
+
+
 ## Requirements
 
 iOS 6.0 +
@@ -52,6 +62,8 @@ iOS 6.0 +
 macOS 10.11 +
 
 tvOS 9.0 +
+
+
 
 ## Installation
 
@@ -61,6 +73,8 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'JQCollectionViewAlignLayout'
 ```
+
+
 
 ## Usage
 
@@ -119,9 +133,13 @@ layout.itemsDirection = JQCollectionViewItemsDirectionLTR;
 
 **The others are same as `UICollectionViewFlowLayout/NSCollectionViewFlowLayout`.**
 
+
+
 ## Author
 
 coder-zjq, zjq_joker@163.com
+
+
 
 ## License
 

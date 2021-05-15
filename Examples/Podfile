@@ -1,22 +1,24 @@
-# use_frameworks!
+workspace 'JQCollectionViewAlignLayout'
 
-workspace 'JQCollectionViewAlignLayout.xcworkspace'
+project 'JQCollectionViewAlignLayout-iOS/JQCollectionViewAlignLayout-iOS.xcodeproj'
+project 'JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout-macOS.xcodeproj'
+project 'JQCollectionViewAlignLayout-tvOS/JQCollectionViewAlignLayout-tvOS.xcodeproj'
 
 target 'JQCollectionViewAlignLayout-iOS' do
   platform :ios, '9.0'
-  project 'JQCollectionViewAlignLayout-iOS/JQCollectionViewAlignLayout-iOS'
   pod 'JQCollectionViewAlignLayout', :path => '../'
+  project 'JQCollectionViewAlignLayout-iOS/JQCollectionViewAlignLayout-iOS.xcodeproj'
 end
 
 target 'JQCollectionViewAlignLayout-macOS' do
   platform :osx, '10.11'
-  project 'JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout-macOS'
   pod 'JQCollectionViewAlignLayout', :path => '../'
+  project 'JQCollectionViewAlignLayout-macOS/JQCollectionViewAlignLayout-macOS.xcodeproj'
 end
 
 target 'JQCollectionViewAlignLayout-tvOS' do
   platform :tvos
-  project 'JQCollectionViewAlignLayout-tvOS/JQCollectionViewAlignLayout-tvOS'
   pod 'JQCollectionViewAlignLayout', :path => '../'
+  project 'JQCollectionViewAlignLayout-tvOS/JQCollectionViewAlignLayout-tvOS.xcodeproj'
 end
 

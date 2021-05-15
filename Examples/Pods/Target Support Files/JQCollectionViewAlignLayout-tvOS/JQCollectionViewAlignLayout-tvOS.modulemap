@@ -1,6 +1,0 @@
-framework module JQCollectionViewAlignLayout {
-  umbrella header "JQCollectionViewAlignLayout-tvOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
