@@ -14,7 +14,7 @@
 
 可以通过 `git clone` 仓库，并在 `Examples` 文件夹下执行 `pod install`，然后用 Xcode 打开 `JQCollectionViewAlignLayout.xcworkspace` 并选择下列中的一个 scheme 运行对应的示例项目。
 
-![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/schemes.png?raw=true)
+<img src="https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/schemes.png?raw=true" style="zoom:50%;" />
 
 ### iOS
 

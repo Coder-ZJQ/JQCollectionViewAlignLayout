@@ -16,7 +16,7 @@ A custom layout object based on flow layout, that supports setting horizontal, v
 
 To run the example project, clone the repo, and run `pod install` from the Examples directory first. Then open `JQCollectionViewAlignLayout.xcworkspace` with Xcode and choose a scheme below:
 
-![](https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/schemes.png?raw=true)
+<img src="https://github.com/Coder-ZJQ/JQCollectionViewAlignLayout/blob/master/images/schemes.png?raw=true" style="zoom: 50%;" />
 
 ### iOS
 
